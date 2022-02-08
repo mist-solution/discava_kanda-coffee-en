@@ -1,0 +1,400 @@
+@charset "utf-8";
+
+.wrap{
+    width:100%;
+    background-color: #362514;
+}
+li{
+    list-style:none;
+}
+.Container{
+    background-image:url(../pic/wallpaper.png);
+    height:7000px;
+    margin:10px 10px 0px 0px;
+    padding-left:0;
+    padding-right:0;
+}
+footer{
+    background-color: #362514;
+    height:30px;
+}
+
+/*　サイドメニュー内　*/
+.Head__fixed {
+  position: sticky;
+  top: 20px;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+.Head{
+    max-width:230px;
+    background-color: #362514 ;
+    color:#fff;
+}
+
+.Head__title{
+    font-size:1em;
+    text-align:center;
+    margin-top:15px;
+}
+
+.Head__logo{
+    width:100%;
+}
+.SideMenu{
+    margin-top:4em;
+    text-align:center;
+    padding:0;
+}
+.SideMenu__list{
+    margin-top:1em;
+    font-size:1.2em;
+}
+.SideMenu__list:hover{
+    background-color:#fff;
+    color:#362514;
+}
+.SideMenu__list--last{
+    margin-top:3em;
+    font-size:1.1em;
+    min-width:168px;
+} 
+.SideMenu__list--last a{
+    background-image:url(../pic/wood.jpg);
+    padding:0.2em;
+}
+.SideMenu__list--last img{
+    width:70%;
+}
+.HeadIcon{
+    margin-top:4em;
+    padding:0;
+}
+.HeadIcon li{
+    width:30px;
+    display:inline-block;
+    margin-left:14px;
+}
+.Order{
+    display:flex;
+    flex-wrap:wrap;
+}
+.Order dt,.Order dd{
+    margin-top:0.5em;
+}
+.Order__day{
+    width:35%;
+}
+.Order__time{
+    width:65%;
+    margin-bottom:0;
+}
+.Order__day--last{
+    width:100%;
+    font-size:0.8em;
+}
+
+.Head p{
+    font-size:1.3em;
+    margin-left:-10px;
+    margin-bottom:0px;
+    margin-top:2em;
+}
+
+/* フォント　晴れのそら明朝 */
+@font-face {
+	font-family: 'MyFont';
+	src: url(../hare/Harenosora.otf);
+}
+
+body {
+	font-family: MyFont;
+}
+
+/* main */
+
+.FirstV{
+    height:100vh;
+    background-image: url(../pic/top1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#362514;
+    min-height:670px;
+}
+.FirstV p{
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    font-size: clamp(15px, 100vw/60, 25px);
+}
+.FirstV span{
+    padding:.5em .2em .5em .2em;
+    letter-spacing:.2em;
+    background-color:#fff;
+}
+.Catch1{
+    top:20%;
+    position:absolute;
+    right:15%;
+}
+.Catch2{
+    top:20%;
+    position:absolute;
+    right:19%;
+}
+.FirstV__container{
+    position:relative;
+    height:100%;
+    width:100%;
+}
+.News__title--img{
+    width:160px;
+    position:absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.News__title--h{
+    visibility: hidden;
+}
+.News{
+    width:65%;
+    margin-left:auto;
+    margin-right:auto;
+    height:600px;
+    display: flex;
+    align-items:center;
+}
+.News__title{
+    position:relative;
+    width:30%;
+    height:100%;
+    margin:0;
+}
+.News__list{
+    width:70%;
+}
+.NList__title{
+    font-size: clamp(15px, 100vw/80, 25px);
+}
+.NList__date{
+    font-size: clamp(14px, 100vw/80, 25px);
+}
+.NList > li:not(:first-child){ 
+    border-top:2px solid rgba(54,37,20,0.2);
+    padding-top:8px;
+}
+.NList li{
+    margin-bottom:8px;
+    position:relative;
+}
+.NList img{
+    height:2.2em;
+    position:absolute;
+    left:-2.5em;
+    top:1.5em;
+}
+.History{
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    flex-direction : row-reverse;
+    height:900px;
+}
+.HistoryAbout{
+    width:50%;
+    font-size:18px;
+}
+.HistoryAbout__exp{
+    color:gray;
+}
+.HistoryAbout__title{
+    width:100%;
+    position:relative;
+    margin-top:50%;
+    margin-bottom:10%;
+}
+.HistoryAbout__title h2{
+    position:absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color:rgba(54,37,20,0.8);
+    font-size: clamp(15px, 100vw/60, 40px);
+  
+}
+.History__img{
+    width:50%;
+    text-align:center;
+}
+.History__img img{
+    height:100%;
+}
+.Sign{
+    width:100%;
+    text-align:right;
+}
+.Sign__icon{
+    width:30%;
+    margin-top:-5em;
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
+}
+.Menu{
+    width:70%;
+    margin-right:auto;
+    margin-left:auto;
+}
+.Menu__title{
+    width:35%;
+    margin-right:auto;
+    margin-left:auto;
+    position:relative;
+}
+.Menu__title h2{
+    position:absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color:rgba(54,37,20,0.8);
+    font-size: clamp(15px, 100vw/60, 40px);
+}
+.Menu__list{
+    display: flex;
+  flex-wrap: wrap;
+}
+.Recom{
+    width:50%;
+    text-align:center;
+    position:relative;
+    margin-top:5em;
+}
+.Recom__img{
+    width:60%;
+}
+.Recom__value{
+    font-size: clamp(15px, 100vw/60, 22px);
+    font-family:"YuMincho";
+}
+.Recom__title , .Recom__about {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    position:absolute;
+    font-size: clamp(15px, 100vw/60, 25px);
+    text-align: center;
+}
+.Recom__about--icon{
+    width:2em;
+}
+.Recom__title{
+    background-color:rgba(54,37,20,0.9);
+    color:#fff;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    left:12%;
+    top:-10%;
+    letter-spacing:.2em;
+}
+.Recom__about{
+    right:0%;
+    height:100%;
+    top:-2.5em;
+    white-space: nowrap;
+    letter-spacing:.2em;
+}
+.Recom__about--big{
+    font-size: clamp(20px, 100vw/40, 45px);
+}
+.Recom__about--icon{
+    margin-right:.2em;
+    margin-bottom:.5em;
+}
+.MenuEg__list{
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+
+    font-size: clamp(16px, 100vw/60, 20px);
+    letter-spacing:.4em;
+}
+.MenuEg__list li:not(:last-child){
+    line-height:clamp(2em, 100vw/25, 4em);
+    list-style-type: disc;
+    margin-top:1em;
+}
+.MenuEg{
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+}
+.MenuEg__list--last{
+    background-color:#362514;
+    color:#fff;
+    height:100%;
+    padding:2em .3em 2em .3em;
+    margin-right:2em;
+}
+.MenuEg__btn{
+    font-size: clamp(16px, 100vw/60, 22px);
+    background-color: rgba(255,255,255,.8);
+    width:fit-content;
+    padding:.2em 3em .2em 3em;
+    border:solid 2px #362514;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:2em;
+}
+
+.KandaDeli{
+    margin-top:15em;
+    text-align: center;
+    height:700px;
+}
+.KandaDeli__title{
+    width:25%;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+}
+.KandaDeli__title h2{
+    position:absolute;
+    top: 45%;
+    right:10%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: clamp(15px, 100vw/60, 30px);
+}
+.ShopAbout{
+    width:60%;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.ShopAbout__title h2{
+    text-align: center;
+    margin-bottom: 1em;
+}
+.ShopAbout__title{
+    width:100%;
+    border-bottom:1px solid #362514;
+    margin-bottom: 4em;;
+}
+
+.ShopInfo__about img{
+    width:1em;
+}
+.ShopInfo__title{
+    font-size:1.3em;
+}
+.ShopInfo__about{
+    margin-bottom:2em;
+}
