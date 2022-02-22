@@ -14,13 +14,76 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    <style></style>
     <link rel="stylesheet" href="stylesheet/style.css">
+    <script>
+        jQuery(function ($) {
+            $.fn.clickToggle = function (a, b) {
+            return this.each(function () {
+                var clicked = false;
+                $(this).on('click', function () {
+                clicked = !clicked;
+                if (clicked) {
+                    return a.apply(this, arguments);
+                }
+                return b.apply(this, arguments);
+                });
+            });
+            };
+            $('.HeadSP__btn').clickToggle(function () {
+            // １回目のクリック
+            $(this).addClass("active");
+            $(this).siblings(".Hum").css("display","block");
+            $(this).find(".HeadSP__btn--hm").css("height","41px").css("top","8%");
+            }, function () {
+            // ２回目のクリック
+            $(this).removeClass("active");
+            $(this).siblings(".Hum").css("display","none");
+            $(this).find(".HeadSP__btn--hm").css("height","24px").css("top","23%");;
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="wrap">
     <div class="row mx-auto">
-        <header class="col-2 Head">  
+        <header class="col-lg-2 Head">  
+            <div class="HeadSP">
+                <img class="HeadSP__logo" src="top_pic/logo.svg">
+                <p class="HeadSP__text">神田駅北口店</p>
+                <p class="HeadSP__text"><img alt="tel" src="top_pic/tel.svg">03-3252-7608</p>
+                <div class="HeadSP__btn" id="Hbtn" >
+                    <div class="HeadSP__btn--hm">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="Hum">
+                    <ul>
+                        <li>
+                            <a href="#">メニューリンク1</a>
+                        </li>
+                        <li>
+                            <a href="#">メニューリンク2</a>
+                        </li>
+                        <li>
+                            <a href="#">メニューリンク3</a>
+                        </li>
+                    </ul>
+                    <ul class="HeadSPIcon">
+                        <li><a><img alt="twi_icon" src="top_pic/twi_icon.svg"></a></li>
+                        <li><a><img alt="inst_icon" src="top_pic/inst_icon.svg"></a></li>
+                    </ul>
+                    <p>【営業時間】</p>
+                    <dl class="Order">
+                        <dt class="Order__day">平日</dt><dd class="Order__time">7:00〜22:00</dd>
+                        <dt class="Order__day--last">※ラストオーダーは21:45</dt>
+                        <dt class="Order__day">土曜日</dt><dd class="Order__time">8:00〜18:00</dd>
+                        <dt class="Order__day">日曜日</dt><dd class="Order__time">9:00〜18:00</dd>
+                    </dl>    
+                </div>
+            </div>
             <div class="Head__fixed">
-                <img class="Head__logo" src="pic/logo1.png" alt="珈琲園サイドロゴ">
+                <img class="Head__logo" src="top_pic/logo1.png" alt="珈琲園サイドロゴ">
                 <h1 class="Head__title">神田駅北口店</h1>
                 <nav class="HeadNav">
                     <ul class="SideMenu">
@@ -28,13 +91,13 @@
                         <li class="SideMenu__list"><a>当店について</a></li>
                         <li class="SideMenu__list"><a>メニュー</a></li>
                         <li class="SideMenu__list"><a>ギャラリー</a></li>
-                        <li class="SideMenu__list"><a>お問い合わせ</a></li>
-                        <li class="SideMenu__list--last"><img alt="outide" src="pic/outi.svg"><br><a>オンラインショップ</a></li>
+                        <a href="contact/index.php"><li class="SideMenu__list">お問い合わせ</li></a>
+                        <li class="SideMenu__list--last"><img alt="outide" src="top_pic/outi.svg"><br><a>オンラインショップ</a></li>
                     </ul>
                 </nav>
                 <ul class="HeadIcon">
-                    <li><a><img alt="twi_icon" src="pic/twi_icon.svg"></a></li>
-                    <li><a><img alt="inst_icon" src="pic/inst_icon.svg"></a></li>
+                    <li><a><img alt="twi_icon" src="top_pic/twi_icon.svg"></a></li>
+                    <li><a><img alt="inst_icon" src="top_pic/inst_icon.svg"></a></li>
                 </ul>
                 <p>【営業時間】</p>
                 <dl class="Order">
@@ -45,7 +108,7 @@
                 </dl>
             </div>
         </header>
-        <main class="col Container">
+        <main class="col-lg Container">
             <div class="FirstV">
                 <div class="FirstV__container">
                     <p class="Catch1"><span>一九五七年から神田の地で愛されてきた</span></p>
@@ -55,51 +118,73 @@
             <section class="News">
                 <div class="News__title">
                     <h2 class="News__title--h">お知らせ</h2>
-                    <img class="News__title--img" alt="sign" src="pic/topic.svg">
+                    <img class="News__title--img" alt="sign" src="top_pic/topic.svg">
                 </div>
                 <div class="News__list">
                     <ul class="NList">
-                        <li><span class="NList__icon"><img alt="gal" src="pic/gal.svg"></span><span class="NList__date">2021-11-29</span><br><span class="NList__title">神田珈琲園ネット通販【年末年始期間・配送のお知らせ】</span><img alt="" src=""></li>
-                        <li><span class="NList__icon"><img alt="bell" src="pic/bell.svg"></span><span class="NList__date">2021-11-29</span><br><span class="NList__title">【鉄道時間】写真展 2/4まで</span><img alt="" src=""></li>
-                        <li><span class="NList__icon"><img alt="gal" src="pic/gal.svg"></span><span class="NList__date">2021-11-29</span><br><span class="NList__title">【鉄道時間】写真展 2/4まで</span><img alt="" src=""></li>
-                        <li><span class="NList__icon"><img alt="bell" src="pic/bell.svg"></span><span class="NList__date">2021-11-29</span><br><span class="NList__title">【鉄道時間】写真展 2/4まで</span><img alt="" wsrc=""></li>
+                        <li><span class="NList__icon"><img alt="gal" src="top_pic/gal.svg"></span><span class="NList__date">2021-11-29</span><br><p class="NList__title">神田珈琲園ネット通販【年末年始期間・配送のお知らせ】</span><img alt="" src=""></li>
+                        <li><span class="NList__icon"><img alt="bell" src="top_pic/bell.svg"></span><span class="NList__date">2021-11-29</span><br><p class="NList__title">【鉄道時間】写真展 2/4まで</p><img alt="" src=""></li>
+                        <li><span class="NList__icon"><img alt="gal" src="top_pic/gal.svg"></span><span class="NList__date">2021-11-29</span><br><p class="NList__title">【鉄道時間】写真展 2/4まで</p><img alt="" src=""></li>
+                        <li><span class="NList__icon"><img alt="bell" src="top_pic/bell.svg"></span><span class="NList__date">2021-11-29</span><br><p class="NList__title">【鉄道時間】写真展 2/4まで</p><img alt="" wsrc=""></li>
                     </ul>
                 </div>
             </section>
-            <section class="History">
-                <div class="HistoryAbout">
-                    <div class="HistoryAbout__title">
-                        <img alt="history1" src="pic/History1.svg">
-                        <h2>神田珈琲園のはじまり</h2>
+            <div class="Hwrap">
+                <section class="History">
+                    <div class="HistoryAbout">
+                        <div class="HistoryAbout__title">
+                            <img alt="history1" src="top_pic/History1.svg">
+                            <h2>神田珈琲園のはじまり</h2>
+                        </div>
+                        <p>神田珈琲園は昭和３３年頃現在の場所に美人喫茶としてオープンしました。</p>
+                        <p>その後、昭和４０年代に個性的な喫茶店が主流となっていくのにともない、神田珈琲園も美人喫茶から直火焙煎の珈琲専門店にリニューアルし、現在に至っております。</p>
+                        <span class="HistoryAbout__exp"><p>※画像タップで拡大</p></span>
                     </div>
-                    <p>神田珈琲園は昭和３３年頃現在の場所に美人喫茶としてオープンしました。</p>
-                    <p>その後、昭和４０年代に個性的な喫茶店が主流となっていくのにともない、神田珈琲園も美人喫茶から直火焙煎の珈琲専門店にリニューアルし、現在に至っております。</p>
-                    <span class="HistoryAbout__exp"><p>※画像タップで拡大</p></span>
-                </div>
-                <div class="History__img">
-                    <img alt="history" src="pic/hist.svg">
-                </div>
-            </section>
+                    <div class="History__img">
+                        <img alt="history" src="top_pic/hist.svg">
+                    </div>
+                    <div class="History__cul">
+                        <ul class="Hslider">
+                            <li class="Hslider__li">
+                            <img src="top_pic/1957.jpeg" alt="1957">
+                            <p>1957</p>
+                            </li>
+                            <li class="Hslider__li">
+                            <img src="top_pic/1990.jpeg" alt="1980">
+                            <p>1980</p>
+                            </li>
+                            <li class="Hslider__li">
+                            <img src="top_pic/2010.JPG" alt="2010">
+                            <p>2010</p>
+                            </li>
+                            <li class="Hslider__li">
+                            <img src="top_pic/2022.JPG" alt="2022">
+                            <p>2022</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
             <div class="Sign">
-                <img class="Sign__icon" alt="coffee-icon" src="pic/coffee-en.svg">
+                <img class="Sign__icon" alt="coffee-icon" src="top_pic/coffee-en.svg">
             </div>
             <section class="Menu">
                 <div class="Menu__title">
-                    <img alt="hukidashi" src="pic/hukidshi.svg">
+                    <img alt="hukidashi" src="top_pic/hukidshi.svg">
                     <h2>おすすめメニュー</h2>
                 </div>
                 <div class="Menu__list">
                     <div class="Recom">
-                        <p class="Recom__title">デカオーレ</p>
-                        <p class="Recom__about"><img alt="cup-icon" src="pic/cup.svg" class="Recom__about--icon">とにかく<span class="Recom__about--big">大</span>きい</p>
-                        <img class="Recom__img" alt="dekaore" src="pic/dekaore.png">
-                        <p class="Recom__value">¥570</p>
+                        <p class="Recom__title Recom__title--1">珈琲園ブレンド</p>
+                        <p class="Recom__about Recom__about--1"><img alt="coffee-icon" src="top_pic/coffee-icon.svg" class="Recom__about--icon">おかわり自由の看板商品</p>
+                        <img class="Recom__img" alt="kanda-coffee" src="top_pic/kanda-coffee.png">
+                        <p class="Recom__value Recom__value--1">¥500</p>
                     </div>
                     <div class="Recom">
-                        <p class="Recom__title">珈琲園ブレンド</p>
-                        <p class="Recom__about"><img alt="coffee-icon" class="Recom__about--icon" src="pic/coffee-icon.svg">おかわり自由の看板商品</p>
-                        <img class="Recom__img" alt="kanda-coffee"  src="pic/kanda-coffee.png">
-                        <p class="Recom__value">¥500</p>
+                        <p class="Recom__title Recom__title--2">デカオーレ</p>
+                        <p class="Recom__about Recom__about--2"><img alt="cup-icon" class="Recom__about--icon" src="top_pic/cup.svg">とにかく<span class="Recom__about--big">大</span>きい</p>
+                        <img class="Recom__img" alt="dekaore"  src="top_pic/dekaore.png">
+                        <p class="Recom__value Recom__value--2">¥570</p>
                     </div>
                 </div>
                 <div class="MenuEg">
@@ -115,16 +200,44 @@
             </section>
             <section class="KandaDeli">
                 <div class="KandaDeli__title">
-                    <img alt="KandaDeli" src="pic/home-kanda.svg">
+                    <img alt="KandaDeli" src="top_pic/home-kanda.svg">
                     <h2>お家で神田珈琲</h2>
                 </div>
                 <div class="KandaDeli__loop">
-                    <!-- <img src="pic/loops.png"><img src="pic/loops.png"> -->
+                    <ul class="LoopSlide">
+                        <li class="LoopSlide__content">tomato</li>
+                        <li class="LoopSlide__content">orange</li>
+                        <li class="LoopSlide__content">blue</li>
+                        <li class="LoopSlide__content">green</li>
+                    </ul>
+                    <ul class="LoopSlide">
+                        <li class="LoopSlide__content">tomato</li>
+                        <li class="LoopSlide__content">orange</li>
+                        <li class="LoopSlide__content">blue</li>
+                        <li class="LoopSlide__content">green</li>
+                    </ul>
+                    <ul class="LoopSlide">
+                        <li class="LoopSlide__content">tomato</li>
+                        <li class="LoopSlide__content">orange</li>
+                        <li class="LoopSlide__content">blue</li>
+                        <li class="LoopSlide__content">green</li>
+                    </ul>
                     <p>生豆からお好みの挽き具合まで<br>
                         こだわりの豆をお家で楽しめます。<br>
                         オリジナルグッズも販売中！</p>
                 </div>
-                <p><a>Online Shop</a></p>
+                <p class="KandaDeli__btn"><a>Online<span> </span>Shop</a></p>
+            </section>
+            <section class="KandaGallery">
+                    <h2 class="KandaGallery__h2">ギャラリー</h2>
+                    <img alt="Gallery" class="KandaGallery__img">
+                    <p class="KandaGallery__about">当店２階には、絵画・写真・イラスト等を<br>
+                    展示できる展示スペース（ギャラリー）<br>
+                    がございます。<br>
+                    当店展示スペースは、１４日を１単位とする<br>
+                    「年間２６枠制」となっております。
+                    （年末年始は短縮日程あり）</p>
+                    <a><p class="KandaGallery__btn">出店希望の方はこちら</p></a>
             </section>
             <section class="ShopAbout">
                 <div class="ShopAbout__title">
@@ -132,17 +245,29 @@
                 </div>
                 <div>
                     <dl class="ShopInfo">
-                        <dt class="ShopInfo__title">住所</dt><dd class="ShopInfo__about">〒101-0044<br>東京都千代田区鍛冶町2-13-12（<a>地図<img alt="map" src="pic/Map_icon.svg"></a>）</dd>
+                        <dt class="ShopInfo__title">住所</dt><dd class="ShopInfo__about">〒101-0044<br>東京都千代田区鍛冶町2-13-12（<a href="https://goo.gl/maps/rEHGU6YPbPNTgUDG8">地図<img alt="map" src="top_pic/Map_icon.svg"></a>）</dd>
                         <dt class="ShopInfo__title">電話</dt><dd class="ShopInfo__about">03（3252）7608</dd>
                     </dl>
                 </div>
             </section>
         </main>
-        </header>
-        </div>
+    </div>
 </div>
 <footer>
     
 </footer>
+<script>
+        new Vue({
+            el: '#app',
+            data: {
+                show: true
+            },
+            methods: {
+                click: function () {
+                    this.show = !this.show
+                }
+            }
+        });
+</script>
 </body>
 </html>
