@@ -7,6 +7,9 @@
 body {
 	font-family: "MyFont","YuMincho";
 }
+.Copy{
+  font-family:"YuMincho";
+}
 h2{
   font-weight: 600;
 }
