@@ -1,4 +1,5 @@
 <?php 
+    ini_set('display_errors',1);
     // フォームのボタンが押されたら
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // フォームから送信されたデータを各変数に格納
@@ -12,7 +13,7 @@
     if (isset($_POST["submit"])) {
             mb_language("ja");
             mb_internal_encoding("UTF-8");
-            $subject = "［自動送信］お問い合わせ内容の確認";
+            $subject = "［神田珈琲園］お問い合わせ内容の確認";
         $body = <<< EOM
         {$name}　様
 
@@ -35,14 +36,41 @@
 
         内容を確認のうえ、回答させて頂きます。
         しばらくお待ちください。
-        EOM;
+EOM;
         
-        $fromEmail = "titan114514@gmail.com";
         $fromName = "田中";
-        $pfrom = "-f titan114514@gmail.com";
+        $fromEmail = "t_tanaka@discava.net";
         $header = "From: " .mb_encode_mimeheader($fromName) ."<{$fromEmail}>";
-        mb_send_mail($email, $subject, $body, $header, $pfrom);
-        header( "Location: thanks.php" ) ;
+        exit;
+    }
+        mb_send_mail($email, $subject, $body, $header, $fromEmail);
+
+        $body = <<< EOM
+        {$name}　様からのお問い合わせです。
+       
+
+
+        【 お名前 】 
+        {$name}
+
+        【 ふりがな 】 
+        {$furigana}
+
+        【 メール 】 
+        {$email}
+
+        【 内容 】 
+        {$content}
+        
+
+        
+EOM;
+        if(mb_send_mail($fromEmail, $subject, $body, $header,$email )){
+            header( "Location: thanks.php" ) ;
+        }else{
+            header( "Location: ../index.html" );
+        }
+        
         exit;
     }
 ?>
@@ -63,55 +91,93 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
+    <script src="../js/main.js"></script>
 </head>
 <body>
 <div class="wrap">
     <div class="row mx-auto">
-        <header class="col-lg-2 Head">  
+    <header id="header" class="col-lg-2 Head"> 
             <div class="HeadSP">
-                <a href="../index.html"><img class="HeadSP__logo" src="../top_pic/logo.svg"></a>
-                <p class="HeadSP__text">神田駅北口店</p>
-                <p class="HeadSP__text"><img alt="tel" src="../top_pic/tel.svg">03-3252-7608</p>
-                <div class="HeadSP__btn">
-                    <div class="HeadSP__btn--hm" id="Hbtn">
+                <div class="HeadSP__fixed">
+                    <a href="../index.html"><img class="HeadSP__logo" src="../top_pic/logo.svg"></a>
+                    <p class="HeadSP__text">神田駅北口店</p>
+                    <p class="HeadSP__text"><img alt="tel" src="../top_pic/tel.svg">03-3252-7608</p>
+                </div>
+                <div class="HeadSP__btn" id="Hbtn" >
+                    <div class="HeadSP__btn--hm">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
                 </div>
+                <div class="Hum">
+                    <div class="Hum__logo">
+                        <a href="index.html"><img alt="logo" src="../top_pic/logo.svg"></a>
+                    </div>
+                    <p class="Hum__shop">神田駅東口店</p>
+                    <ul class="HumMenu">
+                            <a href="../index.html"><li class="HumMenu__list">トップページ</li></a>
+                            <a href="../about.html"><li class="HumMenu__list">当店について</li></a>
+                            <a href="../menu.html"><li class="HumMenu__list">メニュー</li></a>
+                            <a href="../gallery.html"><li class="HumMenu__list">ギャラリー</li></a>
+                            <a href="index.php"><li class="HumMenu__list">お問い合わせ</li></a>
+                            <li class="HumMenu__list--last"><a>オンラインショップ</a></li>
+                    </ul>
+                    <ul class="HeadSPIcon">
+                        <li><a href="https://twitter.com/kanda_coffee_en"><img alt="twi_icon" src="../top_pic/twi_icon.svg"></a></li>
+                        <li><a href="https://www.instagram.com/kanda_coffee_en/"><img alt="inst_icon" src="../top_pic/inst_icon.svg"></a></li>
+                    </ul>
+                    <p class="Hum__time">【営業時間】</p>
+                    <dl class="Order">
+                        <dt class="Order__day">平日　</dt><dd class="Order__time">7:00〜22:00</dd>
+                        <dt class="Order__day--last">※ラストオーダーは21:45</dt>
+                        <dt class="Order__day">土曜日</dt><dd class="Order__time">8:00〜18:00</dd>
+                        <dt class="Order__day">日曜日</dt><dd class="Order__time">9:00〜18:00</dd>
+                    </dl>    
+                    <p class="Hum__tel">【TEL】</p>
+                    <p class="Hum__tel"><a href="tel:03-3252-7608">03-3252-7608</a></p>
+                </div>
             </div>
             <div class="Head__fixed">
-                <img class="Head__logo" src="../top_pic/logo1.png" alt="珈琲園サイドロゴ">
+                <a href="index.html"><img class="Head__logo" src="../top_pic/logo1.png" alt="珈琲園サイドロゴ"></a>
                 <h1 class="Head__title">神田駅北口店</h1>
                 <nav class="HeadNav">
                     <ul class="SideMenu">
-                        <a href="../index.html"><li class="SideMenu__list">トップページ</li></a>
-                        <li class="SideMenu__list"><a>当店について</a></li>
-                        <li class="SideMenu__list"><a>メニュー</a></li>
-                        <li class="SideMenu__list"><a>ギャラリー</a></li>
-                        <li class="SideMenu__list"><a>お問い合わせ</a></li>
+                        <a href="../ndex.html"><li class="SideMenu__list">トップページ</li></a>
+                        <a href="../about.html"><li class="SideMenu__list">当店について</li></a>
+                        <a href="../menu.html"><li class="SideMenu__list">メニュー</li></a>
+                        <a href="../gallery.html"><li class="SideMenu__list">ギャラリー</li></a>
+                        <a href="index.php"><li class="SideMenu__list">お問い合わせ</li></a>
                         <li class="SideMenu__list--last"><img alt="outide" src="../top_pic/outi.svg"><br><a>オンラインショップ</a></li>
                     </ul>
                 </nav>
                 <ul class="HeadIcon">
-                    <li><a><img alt="twi_icon" src="../top_pic/twi_icon.svg"></a></li>
-                    <li><a><img alt="inst_icon" src="../top_pic/inst_icon.svg"></a></li>
+                    <li><a href="https://twitter.com/kanda_coffee_en"><img alt="twi_icon" src="../top_pic/twi_icon.svg"></a></li>
+                    <li><a href="https://www.instagram.com/kanda_coffee_en/"><img alt="inst_icon" src="../top_pic/inst_icon.svg"></a></li>
                 </ul>
                 <p>【営業時間】</p>
                 <dl class="Order">
-                    <dt class="Order__day">平日</dt><dd class="Order__time">7:00〜22:00</dd>
+                    <dt class="Order__day">平日　</dt><dd class="Order__time">7:00〜22:00</dd>
                     <dt class="Order__day--last">※ラストオーダーは21:45</dt>
                     <dt class="Order__day">土曜日</dt><dd class="Order__time">8:00〜18:00</dd>
                     <dt class="Order__day">日曜日</dt><dd class="Order__time">9:00〜18:00</dd>
                 </dl>
-            </div>
-        </header>
-        <main class="col-lg Container">
+            </div> 
+            <script>
+                //$(function () {
+                       // $("#header").load("include/header.html");
+                //});
+            </script>
+        </header>                <main class="col-lg Container">
             <section class="Contact">
                 <h1><img slt="logo" src="../top_pic/logo.svg"><br>お問い合わせ内容確認</h1>
                 <p>入力いただいた内容は以下の通りです。<br>誤りがないかご確認ください。<br>特にメールアドレスに関しては、<br>誤りがありますとご返信できません。<br>必ずご確認いただきますようお願い申し上げます。</p>
             </section>
             <form action="confirm.php" method="post" name="form" onsubmit="return validate()">
+            <input type="hidden" name="name" value="<?php echo $name; ?>">
+            <input type="hidden" name="furigana" value="<?php echo $furigana; ?>">
+            <input type="hidden" name="email" value="<?php echo $email; ?>">
+            <input type="hidden" name="content" value="<?php echo $content; ?>">
                 <fieldset>
                     <legend>
                         <label>お名前</label>
@@ -136,8 +202,27 @@
         </main>
     </div>
 </div>
-<footer>
-    
+<footer class="footer">
+    <ul class="footerUl">
+        <a><li class="footerUl_li">会社情報</li></a>
+        <a><li class="footerUl_li">個人情報の取り扱いについて</li></a>
+    </ul>
+    <div class="SpFooter">
+        <ul class="FooterMenu">
+            <a href="../index.html"><li>トップページ</li></a>
+            <a href="../menu.html"><li>メニュー</li></a>
+            <a href=""><li>オンラインショップ</li></a>
+            <a href="../about.html">><li>当店について</li></a>
+            <a href="../gallery.html"><li>ギャラリー</li></a>
+            <a href="index.php"><li>お問い合わせ</li></a>
+        </ul>
+        <a><p>個人情報の取り扱いについて</p></a>
+        <ul class="FooterIcon">
+            <li class="FooterIcon__li"><img alt="twi_iconF" src="../top_pic/twi_icon.svg"></li>
+            <li class="FooterIcon__li"><img class="FooterIcon__li--left" alt="inst_iconF" src="../top_pic/inst_icon.svg"></li>
+        </ul>
+    </div>
+    <p class="Copy">©2022 神田珈琲園, All Rights Reserved.</p>
 </footer>
 </body>
 </html>
