@@ -84,7 +84,7 @@
                 <h1 class="Head__title">神田駅北口店</h1>
                 <nav class="HeadNav">
                     <ul class="SideMenu">
-                        <a href="../ndex.html"><li class="SideMenu__list">トップページ</li></a>
+                        <a href="../index.html"><li class="SideMenu__list">トップページ</li></a>
                         <a href="../about.html"><li class="SideMenu__list">当店について</li></a>
                         <a href="../menu.html"><li class="SideMenu__list">メニュー</li></a>
                         <a href="../gallery.html"><li class="SideMenu__list">ギャラリー</li></a>

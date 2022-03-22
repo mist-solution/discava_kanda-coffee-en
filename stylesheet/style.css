@@ -10,6 +10,7 @@ body {
 .Copy{
   font-family:"YuMincho";
 }
+
 h2{
   font-weight: 600;
 }
@@ -29,6 +30,9 @@ h2{
   transition: .3s;
   opacity: 0;
   visibility: hidden;
+}
+.LoadMov{
+  display:none;
 }
 #fullOverlay{
   display: none;
@@ -716,7 +720,7 @@ a:hover{
   }
 
   .KandaGallery{
-    padding:1em 1em 13% 1em;
+    padding: 1em 0.5em 13% 0.5em;
   }
   .KandaGallery__btn{
     font-size:clamp(18px,100vw/30,24px);
@@ -1107,7 +1111,8 @@ a:hover{
   .SideMenu__list--last{
     margin-top:2em;
     font-size:1.1em;
-    min-width:168px;
+    min-width:170px;
+    white-space: nowrap;
   } 
   .SideMenu__list--last a{
     background-image:url(../top_pic/wood.jpg);
@@ -1161,6 +1166,7 @@ a:hover{
     width:100%;
     font-size:0.75em;
     text-align: center;
+    white-space: nowrap;
   }  
   .Menu__eg{
     margin-top:1.5em;
@@ -1989,7 +1995,7 @@ textarea{
   .MenuDiv__about--no p{
     width:50%; 
     text-align: left;
-    margin-left:8%;
+    margin-left:5%;
   }
   .MenuList__wrap{
     margin-bottom:5%;
@@ -2028,7 +2034,7 @@ textarea{
   .MenuIcon {
     position: absolute;
     right: 5px;
-    top: -4px;
+    top: -6px;
     transform: translatey(-50%);
     width: 38px;
     height: 38px;
