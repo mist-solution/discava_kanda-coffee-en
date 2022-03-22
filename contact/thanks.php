@@ -127,8 +127,8 @@
         </ul>
         <a><p>個人情報の取り扱いについて</p></a>
         <ul class="FooterIcon">
-            <li class="FooterIcon__li"><a href="https://twitter.com/kanda_coffee_en"><img alt="twi_iconF" src="top_pic/twi_icon.svg"></li></a>
-            <li class="FooterIcon__li"><a href="https://twitter.com/kanda_coffee_en"><img class="FooterIcon__li--left" alt="inst_iconF" src="top_pic/inst_icon.svg"></li></a>
+            <li class="FooterIcon__li"><a href="https://twitter.com/kanda_coffee_en"><img alt="twi_iconF" src="../top_pic/twi_icon.svg"></li></a>
+            <li class="FooterIcon__li"><a href="https://twitter.com/kanda_coffee_en"><img class="FooterIcon__li--left" alt="inst_iconF" src="../top_pic/inst_icon.svg"></li></a>
         </ul>
     </div>
     <p class="Copy">©2022 神田珈琲園, All Rights Reserved.</p>
