@@ -285,12 +285,12 @@ a:hover{
   width:50%;
 }
 .Hum__time{
-  font-size:clamp(15px,100vw/23,20px);
+  font-size:clamp(15px,100vw/23,18px);
   margin-bottom:0;
 }
 .HumMenu{
   padding-left:0;
-  font-size:clamp(16px,100vw/14,22px);
+  font-size:clamp(16px,100vw/14,18px);
 }
 .HumMenu__list{
   text-align:center;
@@ -1062,7 +1062,7 @@ a:hover{
     margin-top:2em;
   }
   .SideMenu{
-    margin-top:3em;
+    margin-top:20%;
     text-align:center;
     padding:0;
   }
