@@ -43,8 +43,8 @@ if (isset($_POST["submit"])) {
         しばらくお待ちください。
     EOM;
 
-    $fromName = "盛盛盛";
-    $fromEmail = "hl_sheng@mistnet.co.jp";
+    $fromName = "田中";
+    $fromEmail = "t_tanaka@discava.net";
     $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
 
     mb_send_mail($email, $subject, $body, $header, $fromEmail);
