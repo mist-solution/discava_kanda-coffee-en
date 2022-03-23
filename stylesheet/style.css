@@ -5,8 +5,12 @@
 	src: url(../hare/Harenosora.otf);
 }
 body {
-	font-family: "YuMincho";
+	font-family: "MyFont","YuMincho";
 }
+.Copy{
+  font-family:"YuMincho";
+}
+
 h2{
   font-weight: 600;
 }
@@ -26,6 +30,9 @@ h2{
   transition: .3s;
   opacity: 0;
   visibility: hidden;
+}
+.LoadMov{
+  display:none;
 }
 #fullOverlay{
   display: none;
@@ -388,7 +395,7 @@ a:hover{
   .FooterIcon__li img{
     width:1.5em;
   }
-  .SpFooter ul {
+  .FooterMenu{
     display: block;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -399,8 +406,22 @@ a:hover{
     flex-wrap:wrap;
     margin-left: 13%;
   }
-  .SpFooter ul li{
+  .FooterIcon{
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+    display:flex;
+    flex-wrap:wrap;
+    margin-left: 30%;
+    justify-content: space-evenly;
+    margin-right: 30%;
+  }
+  .SpFooter ul a{
     width:50%;
+    color:#fff;
   }
   .Head{
     height:4em;
@@ -530,7 +551,7 @@ a:hover{
   .NList__date{
     font-size: clamp(14px, 100vw/80, 25px);
   }
-  .NList > li:not(:first-child){ 
+  .NList_border{ 
     border-top:2px solid rgba(54,37,20,0.2);
     padding-top:8px;
   }
@@ -641,11 +662,15 @@ a:hover{
   .Recom__about--icon{
     width:2em;
   }
-
+  .MenuEg__p{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
   .MenuEg__list{
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-
+    margin-right: auto;
+    margin-left: auto;
     font-size: clamp(16px, 100vw/60, 20px);
     letter-spacing:.4em;
   }
@@ -695,7 +720,7 @@ a:hover{
   }
 
   .KandaGallery{
-    padding:1em 1em 13% 1em;
+    padding: 1em 0.5em 13% 0.5em;
   }
   .KandaGallery__btn{
     font-size:clamp(18px,100vw/30,24px);
@@ -767,7 +792,7 @@ a:hover{
   .NList__date{
     font-size: clamp(14px, 100vw/80, 25px);
   }
-  .NList > li:not(:first-child){ 
+  .NList_border{ 
     border-top:2px solid rgba(54,37,20,0.2);
     padding-top:8px;
   }
@@ -823,31 +848,31 @@ a:hover{
     position:relative;
   }
   .Hrela{
-    height:100vh;
+    height:820px;
   }
   .Himg{
-    width:100px;
+    width:80px;
     position:absolute;
   }
   .Himg:nth-last-of-type(1){
-    transform: translate(-189%, 515%);
-    -webkit-transform: translate(-189%, 515%);
-    -ms-transform: translate(-189%, 515%);
+    transform: translate(-210%, 630%);
+    -webkit-transform: translate(-210%, 630%);
+    -ms-transform: translate(-210%, 630%);
   }
   .Himg:nth-last-of-type(2){
-    transform:translate(-9%, 390%);
-    -webkit-transform: translate(-9%, 390%);
-    -ms-transform: translate(-9%, 390%);
+    transform:translate(-7%, 483%);
+    -webkit-transform: translate(-7%, 483%);
+    -ms-transform: translate(-7%, 483%);
   }
   .Himg:nth-last-of-type(3){
-    transform: translate(-225%, 270%);
-    -webkit-transform: translate(-225%, 270%);
-    -ms-transform: translate(-225%, 270%);
+    transform: translate(-256%, 335%);
+    -webkit-transform: translate(-256%, 335%);
+    -ms-transform: translate(-256%, 335%);
   }
   .Himg:nth-last-of-type(4){
-    transform:  translate(-40%, 150%);
-    -webkit-transform:  translate(-40%, 150%);
-    -ms-transform:  translate(-40%, 150%);
+    transform: translate(-50%, 200%);
+    -webkit-transform:  translate(-50%, 200%);
+    -ms-transform: translate(-50%, 200%);
   }
   .Sign{
     width:100%;
@@ -997,6 +1022,7 @@ a:hover{
     margin-top:-1em;
     margin-bottom:0;
     padding-right:3%;
+    line-height:1.2em;
   }
   .footerUl{
     padding-top:10px;
@@ -1085,7 +1111,8 @@ a:hover{
   .SideMenu__list--last{
     margin-top:2em;
     font-size:1.1em;
-    min-width:168px;
+    min-width:170px;
+    white-space: nowrap;
   } 
   .SideMenu__list--last a{
     background-image:url(../top_pic/wood.jpg);
@@ -1137,7 +1164,9 @@ a:hover{
   }
   .Order__day--last{
     width:100%;
-    font-size:0.8em;
+    font-size:0.75em;
+    text-align: center;
+    white-space: nowrap;
   }  
   .Menu__eg{
     margin-top:1.5em;
@@ -1299,6 +1328,9 @@ a:hover{
     letter-spacing:.2em;
     left:10%;
   }
+  .Recom__about--big{
+    font-size: 1.5em;
+  }
   .Recom__value{
     text-align:center;
     width:auto;
@@ -1339,7 +1371,7 @@ a:hover{
 }
 .ShopAbout__title h2{
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: .1em;
 }
 .ShopAbout__title{
     width:100%;
@@ -1911,6 +1943,9 @@ textarea{
     padding-bottom:10%;
     text-shadow: 3px 2px 3px #000;
   }
+  .MenuDiv__about--no p:first-child{
+    text-align: right;
+  }
   .MenuTop{
     height:40vh;
   }
@@ -1939,7 +1974,7 @@ textarea{
   .MenuList__genre{
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content:space-evenly;
     margin-bottom:2%;
   }
   .MenuList__genre > div{
@@ -1960,7 +1995,7 @@ textarea{
   .MenuDiv__about--no p{
     width:50%; 
     text-align: left;
-    margin-left:8%;
+    margin-left:5%;
   }
   .MenuList__wrap{
     margin-bottom:5%;
@@ -1999,7 +2034,7 @@ textarea{
   .MenuIcon {
     position: absolute;
     right: 5px;
-    top: -4px;
+    top: -6px;
     transform: translatey(-50%);
     width: 38px;
     height: 38px;
@@ -2450,6 +2485,117 @@ table th {
   }
 }
 /*************   ニュースページここまで   *************/
+
+/*************   申込書申請ページ   *************/
+
+.Apply {
+  width:90%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  margin-top:2em;
+  max-width:600px;
+}
+.Apply img {
+  width:40%;
+}
+.Apply h1 {
+  font-size:1.3em;
+  line-height:4em;
+}
+.Apply p{
+  margin-top:1em;
+}
+.input__zipCode1{
+  height:1.5em;
+  font-size:.7em;
+  width:10%;
+  border:1px solid #362514;
+  border-radius: 5px;
+}
+@media (max-width: 820px) {
+  .input__zipCode1 {
+    width:15%;
+  }
+}
+.input__zipCode2{
+  height:1.5em;
+  font-size:.7em;
+  width:12%;
+  border:1px solid #362514;
+  border-radius: 5px;
+}
+@media (max-width: 820px) {
+  .input__zipCode2 {
+    width:20%;
+  }
+}
+textarea{
+  height:10em;
+  font-size:.7em;
+  width:100%;
+  border:1px solid #362514;
+  border-radius: 5px;
+}
+.Apply__btn{
+  width:100%;
+  height:3em;
+  background-color:rgb(102, 102, 102);
+  color:#fff;
+  border-radius: 10px;
+  border: #362514 solid 1px;
+  font-size:1em;
+}
+.Apply__btn--2{
+  width:100%;
+  height:3em;
+  background-color: #fff;
+  color:#362514;
+  border-radius: 10px;
+  border: #362514 solid 1px;
+  font-size:1em;
+  margin-bottom:1em;
+}
+.Apply__pp--label{
+  border-bottom: #362514 1px dashed;
+}
+.Apply__pp--label::after{
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #362514;
+  border-right: 2px solid #362514;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.Apply__pp--about{
+  font-size:.6em;
+  margin-bottom:-2em;
+}
+.Apply__pp{
+  width:fit-content;
+  text-align: center;
+  background-color: rgba(255,255,255,.2);
+  border: solid 2px rgba(54,37,20,0.2);
+  padding-left:1em;
+  padding-right:1em;
+  margin-right:auto;
+  margin-left:auto;
+  margin-bottom:1.5em;
+  margin-top:1em;
+}
+.Apply__btn--3{
+  width:100%;
+  height:3em;
+  background-color: #362514;
+  color:#fff;
+  border-radius: 10px;
+  border: #362514 solid 1px;
+  font-size:1em;
+  max-width:400px;
+}
+/*************   申込書申請ページここまで   *************/
+
 a{
   color:#362514;
 }

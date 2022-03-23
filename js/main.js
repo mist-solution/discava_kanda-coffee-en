@@ -79,6 +79,7 @@
             },6000);
             setTimeout(function(){
                 $('.LoadMov__img').find(".Lmovp").html("<img src='top_pic/logo.svg'>");
+                $('.LoadMov__img').find(".Lmovp").css("background-color","rgba(0,0,0,0.2)");
             },8000);
             setTimeout(function(){
                 $('.LoadMov').hide(2000);
@@ -88,7 +89,6 @@
 
             $('.Skip').on('click', function() {
                 $(this).parents(".LoadMov").hide(2000);
-                $(this).parents().siblings().$('.wrap').show(1000);
                 $(this).parents().siblings().$('footer').show(1000);
             });
             //一秒後に実行
@@ -171,7 +171,4 @@
                     });
                 }
             });
-
-
-
 });

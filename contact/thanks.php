@@ -47,8 +47,8 @@
                             <li class="HumMenu__list--last"><a>オンラインショップ</a></li>
                     </ul>
                     <ul class="HeadSPIcon">
-                        <li><a href="https://twitter.com/kanda_coffee_en"><img alt="twi_icon" src="../top_pic/twi_icon.svg"></a></li>
-                        <li><a href="https://www.instagram.com/kanda_coffee_en/"><img alt="inst_icon" src="../top_pic/inst_icon.svg"></a></li>
+                        <li><a href="https://twitter.com/kanda_coffee_en"><img alt="twi_icon" src="../top_pic/twi_icon2.svg"></a></li>
+                        <li><a href="https://www.instagram.com/kanda_coffee_en/"><img alt="inst_icon" src="../top_pic/inst_icon2.svg"></a></li>
                     </ul>
                     <p class="Hum__time">【営業時間】</p>
                     <dl class="Order">
@@ -66,7 +66,7 @@
                 <h1 class="Head__title">神田駅北口店</h1>
                 <nav class="HeadNav">
                     <ul class="SideMenu">
-                        <a href="../ndex.html"><li class="SideMenu__list">トップページ</li></a>
+                        <a href="../index.html"><li class="SideMenu__list">トップページ</li></a>
                         <a href="../about.html"><li class="SideMenu__list">当店について</li></a>
                         <a href="../menu.html"><li class="SideMenu__list">メニュー</li></a>
                         <a href="../gallery.html"><li class="SideMenu__list">ギャラリー</li></a>
@@ -121,14 +121,14 @@
             <a href="../index.html"><li>トップページ</li></a>
             <a href="../menu.html"><li>メニュー</li></a>
             <a href=""><li>オンラインショップ</li></a>
-            <a href="../about.html">><li>当店について</li></a>
+            <a href="../about.html"><li>当店について</li></a>
             <a href="../gallery.html"><li>ギャラリー</li></a>
             <a href="index.php"><li>お問い合わせ</li></a>
         </ul>
         <a><p>個人情報の取り扱いについて</p></a>
         <ul class="FooterIcon">
-            <li class="FooterIcon__li"><img alt="twi_iconF" src="../top_pic/twi_icon.svg"></li>
-            <li class="FooterIcon__li"><img class="FooterIcon__li--left" alt="inst_iconF" src="../top_pic/inst_icon.svg"></li>
+            <li class="FooterIcon__li"><a href="https://twitter.com/kanda_coffee_en"><img alt="twi_iconF" src="../top_pic/twi_icon.svg"></li></a>
+            <li class="FooterIcon__li"><a href="https://twitter.com/kanda_coffee_en"><img class="FooterIcon__li--left" alt="inst_iconF" src="../top_pic/inst_icon.svg"></li></a>
         </ul>
     </div>
     <p class="Copy">©2022 神田珈琲園, All Rights Reserved.</p>
