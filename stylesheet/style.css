@@ -2506,24 +2506,6 @@ table th {
 .Apply p{
   margin-top:1em;
 }
-form{
-  width:60%;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:3em;
-  max-width: 600px;
-  min-width: 330px;
-}
-label{
-  font-size:.7em;
-}
-input{
-  height:1.5em;
-  font-size:.7em;
-  width:100%;
-  border:1px solid #362514;
-  border-radius: 5px;
-}
 .input__zipCode1{
   height:1.5em;
   font-size:.7em;
@@ -2601,28 +2583,6 @@ textarea{
   margin-left:auto;
   margin-bottom:1.5em;
   margin-top:1em;
-}
-.arrow{
-  position: relative;
-  display: inline-block;
-  padding: 0 0 0 16px;
-  color: #000;
-  vertical-align: middle;
-  text-decoration: none;
-  font-size: 15px;
-}
-.arrow::before,
-.arrow::after{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  content: "";
-  vertical-align: middle;
-}
-.Confirm__p{
-  font-size:.7em;
 }
 .Apply__btn--3{
   width:100%;
