@@ -91,7 +91,8 @@
                        // $("#header").load("include/header.html");
                 //});
             </script>
-        </header>        <main class="col-lg Container">
+        </header>        
+        <main class="col-lg Container">
             <div class="Nwrap">
                 <section class="Newses">
                     <div class="Newses__title">
@@ -146,31 +147,22 @@
                     </div>
                 </section>
             </div>
-            <p class="pagetop"><a href="#all">▲PageTop</a></p>
+            <p class="pagetop">
+                <script>
+                    $(function () {
+                           $(".pagetop").load("../include/pagetop.html");
+                    });
+                </script>            
+            </p>
         </main>
     </div>
 </div>
-<footer class="footer">
-    <ul class="footerUl">
-        <a><li class="footerUl_li">会社情報</li></a>
-        <a><li class="footerUl_li">個人情報の取り扱いについて</li></a>
-    </ul>
-    <div class="SpFooter">
-        <ul class="FooterMenu">
-            <a href="../index.html"><li>トップページ</li></a>
-            <a href="../menu.html"><li>メニュー</li></a>
-            <a href=""><li>オンラインショップ</li></a>
-            <a href="../about.html"><li>当店について</li></a>
-            <a href="../gallery.html"><li>ギャラリー</li></a>
-            <a href="../contact/index.php"><li>お問い合わせ</li></a>
-        </ul>
-        <a><p>個人情報の取り扱いについて</p></a>
-        <ul class="FooterIcon">
-            <li class="FooterIcon__li"><a href="https://twitter.com/kanda_coffee_en"><img alt="twi_iconF" src="../top_pic/twi_icon.svg"></li></a>
-            <li class="FooterIcon__li"><a href="https://twitter.com/kanda_coffee_en"><img class="FooterIcon__li--left" alt="inst_iconF" src="../top_pic/inst_icon.svg"></li></a>
-        </ul>
-    </div>
-    <p class="Copy">©2022 神田珈琲園, All Rights Reserved.</p>
+<footer class="footer" id="footer">
+    <script>
+        $(function () {
+               $("#footer").load("../include/footer2.html");
+        });
+    </script>
 </footer>
 
 </body>
