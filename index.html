@@ -59,7 +59,9 @@
         <header id="header" class="col-lg-2 Head"> 
             <script>
                 $(function () {
-                       $("#header").load("include/header.html");
+                    $(window).on("load", function(){
+                        $("#header").load("include/header.html");                
+                    });
                 });
             </script>
         </header>
@@ -203,7 +205,7 @@
                 </div>
                 <div class="ShopAbout__info">
                     <dl class="ShopInfo">
-                        <dt class="ShopInfo__title">住所</dt><dd class="ShopInfo__about">〒101-0044<br>東京都千代田区鍛冶町2-13-12（<a href="https://goo.gl/maps/rEHGU6YPbPNTgUDG8">地図<img alt="map" src="top_pic/Map_icon.svg"></a>）</dd>
+                        <dt class="ShopInfo__title">住所</dt><dd class="ShopInfo__about">〒101-0044<br>東京都千代田区鍛冶町2-13-12（<a target="_blank" href="https://goo.gl/maps/rEHGU6YPbPNTgUDG8">地図<img alt="map" src="top_pic/Map_icon.svg"></a>）</dd>
                         <dt class="ShopInfo__title">電話</dt><dd class="ShopInfo__about">03（3252）7608</dd>
                     </dl>
                 </div>

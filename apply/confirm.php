@@ -100,6 +100,14 @@ if (isset($_POST["submit"])) {
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
+            <!-- OGP -->
+            <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="神田珈琲園 神田駅北口店" />
+    <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
+    <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請確認" />
+    <meta property="og:image" content="top_pic/logo.svg" />
+
 </head>
 
 <body>

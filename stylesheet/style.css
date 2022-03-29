@@ -2200,6 +2200,7 @@ textarea{
   background-size:cover;
   position: relative;
 }
+
 .GallerySch__wrap{
   background-color: #362514;
   margin-left: 5%;
@@ -2308,6 +2309,12 @@ table th {
   margin-left:3em;
   margin-top:.5em;
 }
+.InfoExp__shiori p:first-child{
+  font-size:1.2em;
+  margin-bottom:0;
+  color:#362514;
+  margin-left:2em;
+}
 .year{
   background-color: #362514;
     border: none;
@@ -2397,6 +2404,16 @@ table th {
   }
   .tokki{
     padding-bottom:1em;
+  }
+  .GallerySch{
+    margin-top:10%;
+    margin-bottom:20%;
+  }
+  .WhatG{
+    margin-bottom:20%;
+  }
+  .InfoG{
+    margin-bottom:20%;
   }
 }
 .btn a {

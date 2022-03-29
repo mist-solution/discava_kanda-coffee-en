@@ -17,6 +17,14 @@
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
+        <!-- OGP -->
+        <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="神田珈琲園 神田駅北口店" />
+    <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
+    <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請用メールフォーム" />
+    <meta property="og:image" content="top_pic/logo.svg" />
+
     <script>
         $(function() {
             /* 「同意する」チェックイベント */
@@ -77,7 +85,7 @@
                             <br><input type="address2" name="address2" placeholder="マンション・ビル名等" value="" required="required">
                         </legend>
                         <legend class="Apply__pp">
-                            <label class="Apply__pp--label arrow">個人情報の取り扱いについて</label>
+                            <a href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Apply__pp--label arrow">個人情報の取り扱いについて</label></a>
                             <p class="Apply__pp--about">上記個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p>
                             <br><input type="checkbox" name="pp">
                         </legend>
