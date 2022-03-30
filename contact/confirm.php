@@ -146,7 +146,7 @@ if (isset($_POST["submit"])) {
                         </legend>
                     </fieldset>
                     <input class="Contact__btn--2" type="button" value="内容を修正する" onclick="history.back(-1)">
-                    <button class="Contact__btn" type="submit" name="submit">送信する</button>
+                    <button class="Contact__btn2" type="submit" name="submit">送信する</button>
                 </form>
                 <p class="pagetop">
                     <script>
