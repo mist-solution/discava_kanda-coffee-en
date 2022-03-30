@@ -36,17 +36,17 @@ if (isset($_POST["submit"])) {
 
         内容を確認のうえ、回答させて頂きます。
         しばらくお待ちください。
-EOM;
+    EOM;
 
     $fromName = "田中";
     $fromEmail = "t_tanaka@discava.net";
     $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
-    exit;
+
     mb_send_mail($email, $subject, $body, $header, $fromEmail);
 
     $body = <<< EOM
         {$name}　様からのお問い合わせです。
-       
+
 
 
         【 お名前 】 
@@ -62,8 +62,7 @@ EOM;
         {$content}
         
 
-        
-EOM;
+        EOM;
     if (mb_send_mail($fromEmail, $subject, $body, $header, $email)) {
         header("Location: thanks.php");
     } else {
@@ -123,6 +122,7 @@ EOM;
                     <input type="hidden" name="furigana" value="<?php echo $furigana; ?>">
                     <input type="hidden" name="email" value="<?php echo $email; ?>">
                     <input type="hidden" name="content" value="<?php echo $content; ?>">
+                    <input type="hidden" name="pp" value="<?php echo $pp; ?>">
                     <fieldset>
                         <legend>
                             <label>お名前</label>
