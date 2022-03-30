@@ -33,31 +33,6 @@
                 }
             });
         });
-        $.fn.clickToggle = function (a, b) {
-            return this.each(function () {
-                var clicked = false;
-                $(this).on('click', function () {
-                clicked = !clicked;
-                if (clicked) {
-                    return a.apply(this, arguments);
-                }
-                return b.apply(this, arguments);
-                });
-            });
-            };
-            $('.HeadSP__btn').clickToggle(function () {
-            // １回目のクリック
-            $(this).addClass("active");
-            $(this).siblings(".Hum").css("display","block");
-            $(this).siblings(".HeadSP__fixed").css("display","none");
-            $(this).find(".HeadSP__btn--hm").css("height","41px").css("top","8%");
-            }, function () {
-            // ２回目のクリック
-            $(this).removeClass("active");
-            $(this).siblings(".Hum").css("display","none");
-            $(this).siblings(".HeadSP__fixed").css("display","inline-block");
-            $(this).find(".HeadSP__btn--hm").css("height","24px").css("top","23%");;
-            });
 
             setTimeout(function(){
                 $('.LoadMov__img').css("background-image","url('top_pic/1980.jpeg')");
