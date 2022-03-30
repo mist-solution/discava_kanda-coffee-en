@@ -2435,6 +2435,9 @@ table th {
 .btn a:hover{
   color:#fff;
 }
+.btn03{
+  margin-left:-5%;
+}
 .btn03 a {
 	background-color: #905C40;
 	border: 1px solid transparent;
@@ -2455,9 +2458,9 @@ table th {
 	content: '';
 	position: absolute;
 	top: 50%;
-	right: -50px;
+	right: -25px;
 	transform: translateY(-50%);
-	width: 70px;
+	width: 40px;
 	height: 1px;
 	background-color: #333;
 }

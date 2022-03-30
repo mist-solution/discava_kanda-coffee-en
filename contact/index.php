@@ -56,7 +56,7 @@
             <section class="Contact">
                 <h1><img slt="logo" src="../top_pic/logo.svg"><br>お問い合わせ</h1>
                 <p>ご不明な点などございましたら<br>お気軽にお問い合わせください。</p>
-                <p>※全項目必ず入力してください。</p>
+                <p>※全項目を必ず入力してください。</p>
             </section>
             <form action="confirm.php" method="post" name="form" onsubmit="return validate()">
                 <fieldset>
@@ -77,7 +77,7 @@
                         <br><textarea name="content" rows="5" placeholder="お問合せ内容を入力" required="required"></textarea>
                     </legend>
                     <legend class="Contact__pp">
-                        <a href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Contact__pp--label arrow">個人情報の取り扱いについて</label></a>
+                        <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Contact__pp--label arrow">個人情報の取り扱いについて</label></a>
                         <p class="Contact__pp--about">上記個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p>
                         <br><input type="checkbox" name="pp">
                     </legend>

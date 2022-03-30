@@ -60,7 +60,7 @@
                     <h1><img slt="logo" src="../top_pic/logo.svg"><br>申込書申請用メールフォーム</h1>
                     <p>記載いただいたご住所に申込書をお届けいたしますので、<br>
                         お間違いのないようお気を付けください。</p>
-                    <p>※全項目必ず入力してください。</p>
+                    <p>※全項目を必ず入力してください。</p>
                 </section>
                 <form action="confirm.php" method="post" name="form" onsubmit="return validate()">
                     <fieldset>
@@ -85,7 +85,7 @@
                             <br><input type="address2" name="address2" placeholder="マンション・ビル名等" value="" required="required">
                         </legend>
                         <legend class="Apply__pp">
-                            <a href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Apply__pp--label arrow">個人情報の取り扱いについて</label></a>
+                            <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Apply__pp--label arrow">個人情報の取り扱いについて</label></a>
                             <p class="Apply__pp--about">上記個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p>
                             <br><input type="checkbox" name="pp">
                         </legend>
