@@ -316,7 +316,7 @@ a:visited{
 }
 .HumMenu{
   padding-left:0;
-  font-size:clamp(16px,100vw/37,25px);
+  font-size:clamp(18px,100vw/37,25px);
 }
 .HumMenu__list{
   text-align:center;
