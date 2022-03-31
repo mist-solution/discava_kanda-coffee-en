@@ -264,8 +264,8 @@ a:visited{
   max-width:500px;
   margin-right:auto;
   margin-left:auto;
-  margin-top:4vh;
-  margin-bottom:4vh;
+  margin-top:5%;
+  margin-bottom:5%;
 }
 .HeadSPIcon img{
   width:25px;
@@ -284,7 +284,7 @@ a:visited{
   justify-content: space-between;
   align-items: center;
   flex-wrap:wrap;
-  font-size:clamp(13px,100vw/37,19px);
+  font-size:clamp(14px,100vw/37,19px);
   margin-bottom:.5em;
   padding-right:5%;
 }
@@ -292,7 +292,7 @@ a:visited{
   width:100%;
   margin-left:auto;
   margin-right:auto;
-  font-size:clamp(15px,100vw/37,18px);
+  font-size:clamp(14px,100vw/35,18px);
   margin-bottom:0;
   text-align: center;
 }
@@ -337,7 +337,7 @@ a:visited{
   margin-top:-9%;
 } 
 .Hum__logo img{
-  width:40%;
+  width:35%;
   margin:0 auto;
   max-width:200px;
 }
@@ -350,9 +350,9 @@ a:visited{
   }
 }
 .Hum__shop{
-  font-size:clamp(16px,100vw/40,30px);
+  font-size:clamp(14px,100vw/40,30px);
   margin-top:1vh;
-  margin-bottom:3vh;
+  margin-bottom:0;
 }
 /*************   トップページ   *************/
 .FirstV p{
@@ -1498,6 +1498,9 @@ a:visited{
   margin-left:auto;
   margin-right:auto;
   font-size:clamp(18px,100vw/30,22px);
+}
+.KandaDeli__btn a{
+  color:#fff;
 }
 .KandaDeli__btn span{
   font-size:.5px;
@@ -2736,4 +2739,5 @@ body:after {
 }
 footer p{ 
   margin-block-end:0;
+  color:#fff;
 }
