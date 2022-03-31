@@ -16,7 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if (isset($_POST["submit"])) {
     mb_language("ja");
     mb_internal_encoding("UTF-8");
-    $subject = "［神田珈琲園］申込書申請内容の確認";
+
+    // お客様への送信
+    $subjectToCustomer = "［神田珈琲園］申込書申請内容の確認";
+    $subject = $subjectToCustomer;
     $body = <<< EOM
         {$name}　様
 
@@ -42,12 +45,15 @@ if (isset($_POST["submit"])) {
         内容を確認のうえ、回答させて頂きます。
         しばらくお待ちください。
     EOM;
+    //お客様へ送信する
+    mb_send_mail($email, $subject, $body);
 
-    $fromName = "田中";
-    $fromEmail = "t_tanaka@discava.net";
+    // 神田珈琲園への送信
+    $fromName = "神田珈琲園";
+    $fromEmail = "integration-test@mistnet.co.jp";
     $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
-
-    mb_send_mail($email, $subject, $body, $header, $fromEmail);
+    $subjectToShop = "{$name} 様からの申請内容";
+    $subject = $subjectToShop;
 
     $body = <<< EOM
         {$name}　様からの申込書です。
@@ -71,7 +77,13 @@ if (isset($_POST["submit"])) {
 
         
     EOM;
-    if (mb_send_mail($fromEmail, $subject, $body, $header, $email)) {
+    //神田珈琲園へ送信する
+    mb_send_mail($fromEmail, $subject, $body, $header);
+
+    if (
+        mb_send_mail($fromEmail, $subject, $body, $header) &&
+        mb_send_mail($email, $subject, $body)
+    ) {
         header("Location: thanks.php");
     } else {
         header("Location: ../index.html");
@@ -94,14 +106,14 @@ if (isset($_POST["submit"])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Bootstrap Javascript(jQuery含む) -->
-    <script  src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
-            <!-- OGP -->
-            <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
+    <!-- OGP -->
+    <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="神田珈琲園 神田駅北口店" />
     <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
@@ -114,11 +126,11 @@ if (isset($_POST["submit"])) {
     <div class="wrap">
         <div class="row mx-auto">
             <header id="header" class="col-lg-2 Head">
-            <script>
-                $(function () {
+                <script>
+                    $(function() {
                         $("#header").load("../include/header2.html");
-                });
-            </script>
+                    });
+                </script>
             </header>
             <main class="col-lg Container">
                 <section class="Apply">
@@ -166,23 +178,23 @@ if (isset($_POST["submit"])) {
                     <button class="Apply__btn" type="submit" name="submit">送信する</button>
                 </form>
                 <p class="pagetop">
-                <script>
-                    $(function () {
-                           $(".pagetop").load("../include/pagetop.html");
-                    });
-                </script>            
-            </p>
+                    <script>
+                        $(function() {
+                            $(".pagetop").load("../include/pagetop.html");
+                        });
+                    </script>
+                </p>
 
             </main>
         </div>
     </div>
     <footer class="footer" id="footer">
-    <script>
-        $(function () {
-               $("#footer").load("../include/footer2.html");
-        });
-    </script>
-</footer>
+        <script>
+            $(function() {
+                $("#footer").load("../include/footer2.html");
+            });
+        </script>
+    </footer>
 </body>
 
 </html>
