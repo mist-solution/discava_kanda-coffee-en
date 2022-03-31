@@ -11,86 +11,100 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address1  = $_POST["address1"];
     $address2  = $_POST["address2"];
     $pp  = $_POST["pp"];
-}
 
-if (isset($_POST["submit"])) {
-    mb_language("ja");
-    mb_internal_encoding("UTF-8");
+    if (isset($_POST["submit"])) {
+        $sendToCustomer = "none";
+        $sendToShop = "none";
 
-    // お客様への送信
-    $subjectToCustomer = "［神田珈琲園］申込書申請内容の確認";
-    $subject = $subjectToCustomer;
-    $body = <<< EOM
-        {$name}　様
+        // お客様への送信
+        if ($name != "") {
+            mb_language("ja");
+            mb_internal_encoding("UTF-8");
+            $subjectToCustomer = "［神田珈琲園］申込書申請内容の確認";
+            $subject = $subjectToCustomer;
+            $body = <<< EOM
+                {$name}　様
 
-        申請ありがとうございます。
-        以下の申請内容を、メールにて確認させていただきました。
+                申請ありがとうございます。
+                以下の申請内容を、メールにて確認させていただきました。
 
-        ===================================================
-        【 お名前 】 
-        {$name}
+                ===================================================
+                【 お名前 】 
+                {$name}
 
-        【 ふりがな 】 
-        {$furigana}
+                【 ふりがな 】 
+                {$furigana}
 
-        【 メール 】 
-        {$email}
+                【 メール 】 
+                {$email}
 
-        【 住所 】 
-        {$zipCode1}ー{$zipCode2}
-        {$address1}
-        {$address2}
-        ===================================================
+                【 住所 】 
+                {$zipCode1}ー{$zipCode2}
+                {$address1}
+                {$address2}
+                ===================================================
 
-        内容を確認のうえ、回答させて頂きます。
-        しばらくお待ちください。
-    EOM;
-    //お客様へ送信する
-    mb_send_mail($email, $subject, $body);
+                内容を確認のうえ、回答させて頂きます。
+                しばらくお待ちください。
+            EOM;
+            //お客様へ送信する
+            if (mb_send_mail($email, $subject, $body)) {
+                $sendToCustomer = "Success";
+            } else {
+                $sendToCustomer = "Failed";
+            };
+        }
 
-    // 神田珈琲園への送信
-    $fromName = "神田珈琲園";
-    $fromEmail = "integration-test@mistnet.co.jp";
-    $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
-    $subjectToShop = "{$name} 様からの申請内容";
-    $subject = $subjectToShop;
+        // 神田珈琲園への送信
+        if ($name != "") {
+            mb_language("ja");
+            mb_internal_encoding("UTF-8");
+            $fromName = "神田珈琲園";
+            $fromEmail = "integration-test@mistnet.co.jp";
+            $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
+            $subjectToShop = "{$name} 様からの申請内容";
+            $subject = $subjectToShop;
 
-    $body = <<< EOM
-        {$name}　様からの申込書です。
-       
+            $body = <<< EOM
+                {$name}　様からの申込書です。
+            
 
 
-        【 お名前 】 
-        {$name}
+                【 お名前 】 
+                {$name}
 
-        【 ふりがな 】 
-        {$furigana}
+                【 ふりがな 】 
+                {$furigana}
 
-        【 メール 】 
-        {$email}
+                【 メール 】 
+                {$email}
 
-        【 住所 】 
-        {$zipCode1}ー{$zipCode2}
-        {$address1}
-        {$address2}
-        
+                【 住所 】 
+                {$zipCode1}ー{$zipCode2}
+                {$address1}
+                {$address2}
+                
 
-        
-    EOM;
-    //神田珈琲園へ送信する
-    mb_send_mail($fromEmail, $subject, $body, $header);
-
-    if (
-        mb_send_mail($fromEmail, $subject, $body, $header) &&
-        mb_send_mail($email, $subject, $body)
-    ) {
-        header("Location: thanks.php");
-    } else {
-        header("Location: ../index.html");
+                
+            EOM;
+            //神田珈琲園へ送信する
+            if (mb_send_mail($fromEmail, $subject, $body, $header)) {
+                $sendToShop = "Success";
+            } else {
+                $sendToShop = "Failed";
+            };
+        }
+        if (
+            $sendToCustomer == "Success" &&
+            $sendToShop == "Success"
+        ) {
+            header("Location: thanks.php");
+        } else {
+            header("Location: ../index.html");
+        }
     }
-
-    exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -112,20 +126,19 @@ if (isset($_POST["submit"])) {
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
-<<<<<<< HEAD
-    <!-- OGP -->
-    <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
-=======
-    <link rel="shortcut icon" type="image/x-icon" href="top_pic/faviconV2.ico" />
+    <<<<<<< HEAD <!-- OGP -->
+        <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
+        =======
+        <link rel="shortcut icon" type="image/x-icon" href="top_pic/faviconV2.ico" />
 
-            <!-- OGP -->
-            <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
->>>>>>> 510e176abd4d5c82c6ee0d533914121615881614
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="神田珈琲園 神田駅北口店" />
-    <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
-    <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請確認" />
-    <meta property="og:image" content="top_pic/logo.svg" />
+        <!-- OGP -->
+        <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
+        >>>>>>> 510e176abd4d5c82c6ee0d533914121615881614
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="神田珈琲園 神田駅北口店" />
+        <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
+        <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請確認" />
+        <meta property="og:image" content="top_pic/logo.svg" />
 
 </head>
 
