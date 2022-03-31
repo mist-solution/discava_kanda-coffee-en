@@ -105,6 +105,8 @@ if (isset($_POST["submit"])) {
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="top_pic/faviconV2.ico" />
+
     <!-- OGP -->
     <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
     <meta property="og:type" content="article" />
@@ -159,7 +161,7 @@ if (isset($_POST["submit"])) {
                         </legend>
                     </fieldset>
                     <input class="Contact__btn--2" type="button" value="内容を修正する" onclick="history.back(-1)">
-                    <button class="Contact__btn" type="submit" name="submit">送信する</button>
+                    <button class="Contact__btn2" type="submit" name="submit">送信する</button>
                 </form>
                 <p class="pagetop">
                     <script>
