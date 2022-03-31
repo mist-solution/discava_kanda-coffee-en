@@ -54,7 +54,7 @@
             },6000);
             setTimeout(function(){
                 $('.LoadMov__img').find(".Lmovp").html("<img src='top_pic/logo.svg'>");
-                $('.LoadMov__img').find(".Lmovp").css("background-color","rgba(0,0,0,0.2)");
+                $('.LoadMov__img').find(".Lmovp").css("background-color","rgba(255,255,255,0.3)").css("padding","5%");
             },8000);
             setTimeout(function(){
                 $('.LoadMov').hide(2000);

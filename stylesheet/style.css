@@ -1154,6 +1154,7 @@ a:visited{
   .SideMenu__list--last a{
     background-image:url(../top_pic/wood.jpg);
     padding:0.2em;
+    color:#fff;
   }
   .SideMenu__list--last img{
     width:70%;
