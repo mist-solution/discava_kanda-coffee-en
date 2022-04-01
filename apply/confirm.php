@@ -11,74 +11,100 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address1  = $_POST["address1"];
     $address2  = $_POST["address2"];
     $pp  = $_POST["pp"];
-}
 
-if (isset($_POST["submit"])) {
-    mb_language("ja");
-    mb_internal_encoding("UTF-8");
-    $subject = "［神田珈琲園］申込書申請内容の確認";
-    $body = <<< EOM
-        {$name}　様
+    if (isset($_POST["submit"])) {
+        $sendToCustomer = "none";
+        $sendToShop = "none";
 
-        申請ありがとうございます。
-        以下の申請内容を、メールにて確認させていただきました。
+        // お客様への送信
+        if ($name != "") {
+            mb_language("ja");
+            mb_internal_encoding("UTF-8");
+            $subjectToCustomer = "［神田珈琲園］申込書申請内容の確認";
+            $subject = $subjectToCustomer;
+            $body = <<< EOM
+                {$name}　様
 
-        ===================================================
-        【 お名前 】 
-        {$name}
+                申請ありがとうございます。
+                以下の申請内容を、メールにて確認させていただきました。
 
-        【 ふりがな 】 
-        {$furigana}
+                ===================================================
+                【 お名前 】 
+                {$name}
 
-        【 メール 】 
-        {$email}
+                【 ふりがな 】 
+                {$furigana}
 
-        【 住所 】 
-        {$zipCode1}ー{$zipCode2}
-        {$address1}
-        {$address2}
-        ===================================================
+                【 メール 】 
+                {$email}
 
-        内容を確認のうえ、回答させて頂きます。
-        しばらくお待ちください。
-    EOM;
+                【 住所 】 
+                {$zipCode1}ー{$zipCode2}
+                {$address1}
+                {$address2}
+                ===================================================
 
-    $fromName = "田中";
-    $fromEmail = "t_tanaka@discava.net";
-    $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
+                内容を確認のうえ、回答させて頂きます。
+                しばらくお待ちください。
+            EOM;
+            //お客様へ送信する
+            if (mb_send_mail($email, $subject, $body)) {
+                $sendToCustomer = "Success";
+            } else {
+                $sendToCustomer = "Failed";
+            };
+        }
 
-    mb_send_mail($email, $subject, $body, $header, $fromEmail);
+        // 神田珈琲園への送信
+        if ($name != "") {
+            mb_language("ja");
+            mb_internal_encoding("UTF-8");
+            $fromName = "神田珈琲園";
+            $fromEmail = "integration-test@mistnet.co.jp";
+            $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
+            $subjectToShop = "{$name} 様からの申請内容";
+            $subject = $subjectToShop;
 
-    $body = <<< EOM
-        {$name}　様からの申込書です。
-       
+            $body = <<< EOM
+                {$name}　様からの申込書です。
+            
 
 
-        【 お名前 】 
-        {$name}
+                【 お名前 】 
+                {$name}
 
-        【 ふりがな 】 
-        {$furigana}
+                【 ふりがな 】 
+                {$furigana}
 
-        【 メール 】 
-        {$email}
+                【 メール 】 
+                {$email}
 
-        【 住所 】 
-        {$zipCode1}ー{$zipCode2}
-        {$address1}
-        {$address2}
-        
+                【 住所 】 
+                {$zipCode1}ー{$zipCode2}
+                {$address1}
+                {$address2}
+                
 
-        
-    EOM;
-    if (mb_send_mail($fromEmail, $subject, $body, $header, $email)) {
-        header("Location: thanks.php");
-    } else {
-        header("Location: ../index.html");
+                
+            EOM;
+            //神田珈琲園へ送信する
+            if (mb_send_mail($fromEmail, $subject, $body, $header)) {
+                $sendToShop = "Success";
+            } else {
+                $sendToShop = "Failed";
+            };
+        }
+        if (
+            $sendToCustomer == "Success" &&
+            $sendToShop == "Success"
+        ) {
+            header("Location: thanks.php");
+        } else {
+            header("Location: ../index.html");
+        }
     }
-
-    exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -94,21 +120,25 @@ if (isset($_POST["submit"])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Bootstrap Javascript(jQuery含む) -->
-    <script  src="https://code.jquery.com/jquery-3.6.0.js"integrity="sha256H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="top_pic/faviconV2.ico" />
+    <<<<<<< HEAD <!-- OGP -->
+        <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
+        =======
+        <link rel="shortcut icon" type="image/x-icon" href="top_pic/faviconV2.ico" />
 
-            <!-- OGP -->
-            <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="神田珈琲園 神田駅北口店" />
-    <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
-    <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請確認" />
-    <meta property="og:image" content="top_pic/logo.svg" />
+        <!-- OGP -->
+        <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
+        >>>>>>> 510e176abd4d5c82c6ee0d533914121615881614
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="神田珈琲園 神田駅北口店" />
+        <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
+        <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請確認" />
+        <meta property="og:image" content="top_pic/logo.svg" />
 
 </head>
 
@@ -116,11 +146,11 @@ if (isset($_POST["submit"])) {
     <div class="wrap">
         <div class="row mx-auto">
             <header id="header" class="col-lg-2 Head">
-            <script>
-                $(function () {
+                <script>
+                    $(function() {
                         $("#header").load("../include/header2.html");
-                });
-            </script>
+                    });
+                </script>
             </header>
             <main class="col-lg Container">
                 <section class="Apply">
@@ -168,23 +198,23 @@ if (isset($_POST["submit"])) {
                     <button class="Apply__btn" type="submit" name="submit">送信する</button>
                 </form>
                 <p class="pagetop">
-                <script>
-                    $(function () {
-                           $(".pagetop").load("../include/pagetop.html");
-                    });
-                </script>            
-            </p>
+                    <script>
+                        $(function() {
+                            $(".pagetop").load("../include/pagetop.html");
+                        });
+                    </script>
+                </p>
 
             </main>
         </div>
     </div>
     <footer class="footer" id="footer">
-    <script>
-        $(function () {
-               $("#footer").load("../include/footer2.html");
-        });
-    </script>
-</footer>
+        <script>
+            $(function() {
+                $("#footer").load("../include/footer2.html");
+            });
+        </script>
+    </footer>
 </body>
 
 </html>

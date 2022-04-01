@@ -8,68 +8,96 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $content  = $_POST["content"];
     $pp  = $_POST["pp"];
-}
 
-if (isset($_POST["submit"])) {
-    mb_language("ja");
-    mb_internal_encoding("UTF-8");
-    $subject = "［神田珈琲園］お問い合わせ内容の確認";
-    $body = <<< EOM
-        {$name}　様
+    if (isset($_POST["submit"])) {
+        $sendToCustomer = "none";
+        $sendToShop = "none";
 
-        お問い合わせありがとうございます。
-        以下のお問い合わせ内容を、メールにて確認させていただきました。
+        // お客様への送信
+        if ($name != "") {
+            mb_language("ja");
+            mb_internal_encoding("UTF-8");
+            $subjectToCustomer = "［神田珈琲園］お問い合わせ内容の確認";
+            $subject = $subjectToCustomer;
+            $body = <<< EOM
+                {$name}　様
 
-        ===================================================
-        【 お名前 】 
-        {$name}
+                お問い合わせありがとうございます。
+                以下のお問い合わせ内容を、メールにて確認させていただきました。
 
-        【 ふりがな 】 
-        {$furigana}
+                ===================================================
+                【 お名前 】 
+                {$name}
 
-        【 メール 】 
-        {$email}
+                【 ふりがな 】 
+                {$furigana}
 
-        【 内容 】 
-        {$content}
-        ===================================================
+                【 メール 】 
+                {$email}
 
-        内容を確認のうえ、回答させて頂きます。
-        しばらくお待ちください。
-    EOM;
+                【 内容 】 
+                {$content}
+                ===================================================
 
-    $fromName = "田中";
-    $fromEmail = "t_tanaka@discava.net";
-    $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
+                内容を確認のうえ、回答させて頂きます。
+                しばらくお待ちください。
+            EOM;
 
-    mb_send_mail($email, $subject, $body, $header, $fromEmail);
+            //お客様へ送信する
+            if (mb_send_mail($email, $subject, $body)) {
+                $sendToCustomer = "Success";
+            } else {
+                $sendToCustomer = "Failed";
+            };
+        }
 
-    $body = <<< EOM
-        {$name}　様からのお問い合わせです。
+        // 神田珈琲園への送信
+        if ($name != "") {
+            mb_language("ja");
+            mb_internal_encoding("UTF-8");
+            $fromName = "神田珈琲園";
+            $fromEmail = "integration-test@mistnet.co.jp";
+            $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
+            $subjectToShop = "{$name} 様からの問い合わせ内容";
+            $subject = $subjectToShop;
+
+            $body = <<< EOM
+                {$name}　様からのお問い合わせです。
 
 
 
-        【 お名前 】 
-        {$name}
+                【 お名前 】 
+                {$name}
 
-        【 ふりがな 】 
-        {$furigana}
+                【 ふりがな 】 
+                {$furigana}
 
-        【 メール 】 
-        {$email}
+                【 メール 】 
+                {$email}
 
-        【 内容 】 
-        {$content}
-        
+                【 内容 】 
+                {$content}
 
-        EOM;
-    if (mb_send_mail($fromEmail, $subject, $body, $header, $email)) {
-        header("Location: thanks.php");
-    } else {
-        header("Location: ../index.html");
+
+            EOM;
+
+            //神田珈琲園へ送信する
+            if (mb_send_mail($fromEmail, $subject, $body, $header)) {
+                $sendToShop = "Success";
+            } else {
+                $sendToShop = "Failed";
+            };
+        }
+
+        if (
+            $sendToCustomer == "Success" &&
+            $sendToShop == "Success"
+        ) {
+            header("Location: thanks.php");
+        } else {
+            header("Location: ../index.html");
+        }
     }
-
-    exit;
 }
 ?>
 
@@ -144,7 +172,7 @@ if (isset($_POST["submit"])) {
                         <legend>
                             <label>お問い合わせ内容</label>
                             <br>
-                            <p class="Confirm__p"><?php echo $content; ?></p>
+                            <p class="Confirm__p"><?php echo nl2br($content); ?></p>
                         </legend>
                     </fieldset>
                     <input class="Contact__btn--2" type="button" value="内容を修正する" onclick="history.back(-1)">
