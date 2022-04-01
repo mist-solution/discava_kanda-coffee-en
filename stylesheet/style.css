@@ -105,6 +105,31 @@ a:visited{
   width:100%;
 }
 
+/* width420以下で表示 */
+.br__sp {
+  display: none;
+}
+@media (max-width: 420px) {
+  .br__sp {
+    display: block;
+  }
+}
+
+/* width992以下で表示 モバイルは見せない */
+.br__pad {
+  display: none;
+}
+@media (max-width: 992px) {
+  .br__pad {
+    display: block;
+  }
+}
+@media (max-width: 420px){
+  .br__pad {
+    display: none;
+  }
+}
+
 /*　ハンバーガーボタン　*/
 
 /*=============================
