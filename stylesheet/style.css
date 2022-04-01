@@ -1411,7 +1411,7 @@ li{
   height: 600px;
 }
 .ShopAbout{
-    width:60%;
+    width:70%;
     margin-right:auto;
     margin-left:auto;
 }
@@ -1511,8 +1511,10 @@ li{
 .KandaDeli__btn span{
   font-size:.5px;
 }
-.KandaDeli__btn:hover{
+.KandaDeli__btn:hover a{
   color:#362514;
+}
+.KandaDeli__btn:hover{
   background-color:#fff;
 }
 .KandaGallery__btn:hover{
@@ -2229,7 +2231,7 @@ textarea{
   background-color: #362514;
   margin-left: 5%;
   margin-right:5%;
-  border-radius: 20px;
+  border-radius: 10px;
   padding-bottom: 5%;
   text-align: center;
 }
