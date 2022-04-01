@@ -99,11 +99,6 @@ a:hover{
 a:visited{
   color:inherit;
 }
-.KandaGallery__img{
-  background-image: url(../top_pic/gallery2.JPG);
-  background-size:cover;
-  width:100%;
-}
 
 /*　ハンバーガーボタン　*/
 
@@ -1055,6 +1050,9 @@ a:visited{
     padding-top:10px;
     line-height: 1.5;
     margin-bottom:.5em;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   } 
 
   .SpFooter{
@@ -1638,7 +1636,7 @@ label{
   font-size:.7em;
 }
 input{
-  height:1.5em;
+  height:2em;
   font-size:.7em;
   width:100%;
   border:1px solid #362514;
@@ -1659,6 +1657,7 @@ textarea{
   border-radius: 10px;
   border: #362514 solid 1px;
   font-size:1em;
+  cursor: pointer;
 }
 .Contact__btn2 {
   width: 100%;
@@ -1668,6 +1667,7 @@ textarea{
   border-radius: 10px;
   border: #362514 solid 1px;
   font-size: 1em;
+  cursor: pointer;
 }
 .Contact__btn--2{
   width:100%;
@@ -1804,9 +1804,11 @@ textarea{
   font-size:clamp(15px,100vw/30,18px);
   margin-bottom:10%;
 }
+
 .AboutRegion__maturi img{
   width:100%;
   max-width:250px;
+  margin-bottom:3%;
 }
 .AboutGOGO{
   width:70%;
@@ -2372,6 +2374,10 @@ table th {
   }
   .shutten{
     width:15%;
+    min-width:102.5px;
+  }
+  .yoyakaku{
+    min-width:51px;
   }
 }
 @media screen and (max-width:767.8px) {
@@ -2646,6 +2652,15 @@ textarea{
   border:1px solid #362514;
   border-radius: 5px;
 }
+.Apply__btn2 {
+  width: 100%;
+  height: 3em;
+  background-color: rgb(102, 102, 102);
+  color: #fff;
+  border-radius: 10px;
+  border: #362514 solid 1px;
+  font-size: 1em;
+}
 .Apply__btn{
   width:100%;
   height:3em;
@@ -2654,6 +2669,7 @@ textarea{
   border-radius: 10px;
   border: #362514 solid 1px;
   font-size:1em;
+  cursor: pointer;
 }
 .Apply__btn--2{
   width:100%;
@@ -2664,6 +2680,7 @@ textarea{
   border: #362514 solid 1px;
   font-size:1em;
   margin-bottom:1em;
+  cursor: pointer;
 }
 .Apply__pp--label{
   border-bottom: #362514 1px dashed;

@@ -196,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </legend>
                     </fieldset>
                     <input class="Apply__btn--2" type="button" value="内容を修正する" onclick="history.back(-1)">
-                    <button class="Apply__btn" type="submit" name="submit">送信する</button>
+                    <button class="Apply__btn2" type="submit" name="submit">送信する</button>
                 </form>
                 <p class="pagetop">
                     <script>

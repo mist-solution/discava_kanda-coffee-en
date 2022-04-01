@@ -60,7 +60,8 @@
             <main class="col-lg Container">
                 <section class="Apply">
                     <h1><img slt="logo" src="../top_pic/logo.svg"><br>申込書申請用メールフォーム</h1>
-                    <p>記載いただいたご住所に申込書をお届けいたしますので、<br>
+                    <p>記載いただいたご住所に<br>
+                        申込書をお届けいたしますので、<br>
                         お間違いのないようお気を付けください。</p>
                     <p>※全項目を必ず入力してください。</p>
                 </section>
@@ -68,11 +69,11 @@
                     <fieldset>
                         <legend>
                             <label>お名前</label>
-                            <br><input type="text" name="name" placeholder="例）山田太郎" value="">
+                            <br><input type="text" name="name" placeholder="例）山田太郎" value=""  required="required">
                         </legend>
                         <legend>
                             <label>ふりがな</label>
-                            <br><input type="text" name="furigana" placeholder="例）やまだたろう" value="">
+                            <br><input type="text" name="furigana" placeholder="例）やまだたろう" value=""  required="required">
                         </legend>
                         <legend>
                             <label>メールアドレス</label>
