@@ -1618,6 +1618,7 @@ p.btn-border:hover {
   text-align: center;
   margin-top:2em;
   max-width:600px;
+  margin-bottom:5%;
 }
 .Contact img {
   width:40%;
@@ -1720,6 +1721,7 @@ textarea{
   vertical-align: middle;
   text-decoration: none;
   font-size: 15px;
+  cursor: pointer;
 }
 .arrow::before,
 .arrow::after{
