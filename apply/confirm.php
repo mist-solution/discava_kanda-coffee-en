@@ -159,7 +159,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         誤りがないかご確認ください。<br>
                         特にメールアドレスに関しては、<br>
                         誤りがありますとご返信できません。<br>
-                        必ずご確認いただきますようお願い申し上げます。</p>
+                        必ずご確認いただきますよう<br>
+                        お願い申し上げます。</p>
                 </section>
                 <form action="confirm.php" method="post" name="form" onsubmit="return validate()">
                     <input type="hidden" name="name" value="<?php echo $name; ?>">

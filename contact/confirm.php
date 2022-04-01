@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <main class="col-lg Container">
                 <section class="Contact">
                     <h1><img slt="logo" src="../top_pic/logo.svg"><br>お問い合わせ内容確認</h1>
-                    <p>入力いただいた内容は以下の通りです。<br>誤りがないかご確認ください。<br>特にメールアドレスに関しては、<br>誤りがありますとご返信できません。<br>必ずご確認いただきますようお願い申し上げます。</p>
+                    <p>入力いただいた内容は以下の通りです。<br>誤りがないかご確認ください。<br>特にメールアドレスに関しては、<br>誤りがありますとご返信できません。<br>必ずご確認いただきますよう<br>お願い申し上げます。</p>
                 </section>
                 <form action="confirm.php" method="post" name="form" onsubmit="return validate()">
                     <input type="hidden" name="name" value="<?php echo $name; ?>">
