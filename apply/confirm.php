@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ) {
             header("Location: thanks.php");
         } else {
-            header("Location: ../index.html");
+            header("Location: thanks.php");
         }
     }
 }

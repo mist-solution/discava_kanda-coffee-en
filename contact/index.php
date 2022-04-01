@@ -79,8 +79,8 @@
                         <br><textarea name="content" rows="5" placeholder="お問い合わせ内容を入力" required="required"></textarea>
                     </legend>
                     <legend class="Contact__pp">
-                        <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Contact__pp--label arrow">個人情報の取り扱いについて</label></a>
-                        <p class="Contact__pp--about">上記個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p>
+                        <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Contact__pp--label arrow">個人情報の取り扱いについて</label>
+                        <p class="Contact__pp--about">個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p></a>
                         <br><input type="checkbox" name="pp">
                     </legend>
                 </fieldset>

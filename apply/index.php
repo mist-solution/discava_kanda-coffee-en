@@ -88,8 +88,8 @@
                             <br><input type="address2" name="address2" placeholder="マンション・ビル名等" value="" required="required">
                         </legend>
                         <legend class="Apply__pp">
-                            <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Apply__pp--label arrow">個人情報の取り扱いについて</label></a>
-                            <p class="Apply__pp--about">上記個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p>
+                            <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Apply__pp--label arrow">個人情報の取り扱いについて</label>
+                            <p class="Apply__pp--about">個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p></a>
                             <br><input type="checkbox" name="pp">
                         </legend>
                     </fieldset>
