@@ -21,7 +21,7 @@
         <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="神田珈琲園 神田駅北口店" />
-    <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
+    <meta property="og:description" content="神田珈琲園 神田駅北口店　お問い合わせ完了ページ" />
     <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | お問い合わせ完了" />
     <meta property="og:image" content="top_pic/logo.svg" />
 
@@ -40,12 +40,14 @@
             <section class="Contact">
                 <h1><img slt="logo" src="../top_pic/logo.svg"><br>お問い合わせ送信完了</h1>
                 <p>ご入力いただきましたメールアドレス宛に<br>
-                    控えメールを自動返信いたしました。<br>
+                    控えメールを自動返信いたしました。<br><br>
                     この控えメールが届かない場合は、<br>
-                    ご入力いただいたメールアドレスに誤りがあるか、<br>
-                    インターネット上のなんらかのトラブルの可能性も<br>
-                    ありますので、お手数ですが弊社までお電話いただくか、<br>
-                    もしくは再度お問い合わせいただくようお願いいたします。<br>
+                    ご入力いただいたメールアドレスに<br>
+                    誤りがあるか、インターネット上のなんらか<br>
+                    のトラブルの可能性もありますので、<br>
+                    お手数ですが弊社までお電話いただくか、<br>
+                    もしくは再度お問い合わせ<br>
+                    いただくようお願いいたします。<br><br>
                     お問い合わせへの回答に関しまして、<br>
                     近日中にメールにてご回答いたします。</p>
             <a href="../index.html">

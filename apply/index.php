@@ -23,7 +23,7 @@
         <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="神田珈琲園 神田駅北口店" />
-    <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
+    <meta property="og:description" content="神田珈琲園 神田駅北口店　申込書申請用メールフォーム" />
     <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請用メールフォーム" />
     <meta property="og:image" content="top_pic/logo.svg" />
 
@@ -60,7 +60,8 @@
             <main class="col-lg Container">
                 <section class="Apply">
                     <h1><img slt="logo" src="../top_pic/logo.svg"><br>申込書申請用メールフォーム</h1>
-                    <p>記載いただいたご住所に申込書をお届けいたしますので、<br>
+                    <p>記載いただいたご住所に<br>
+                        申込書をお届けいたしますので、<br>
                         お間違いのないようお気を付けください。</p>
                     <p>※全項目を必ず入力してください。</p>
                 </section>
@@ -68,11 +69,11 @@
                     <fieldset>
                         <legend>
                             <label>お名前</label>
-                            <br><input type="text" name="name" placeholder="例）山田太郎" value="">
+                            <br><input type="text" name="name" placeholder="例）山田太郎" value=""  required="required">
                         </legend>
                         <legend>
                             <label>ふりがな</label>
-                            <br><input type="text" name="furigana" placeholder="例）やまだたろう" value="">
+                            <br><input type="text" name="furigana" placeholder="例）やまだたろう" value=""  required="required">
                         </legend>
                         <legend>
                             <label>メールアドレス</label>
@@ -87,8 +88,8 @@
                             <br><input type="address2" name="address2" placeholder="マンション・ビル名等" value="" required="required">
                         </legend>
                         <legend class="Apply__pp">
-                            <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Apply__pp--label arrow">個人情報の取り扱いについて</label></a>
-                            <p class="Apply__pp--about">上記個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p>
+                            <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Apply__pp--label arrow">個人情報の取り扱いについて</label>
+                            <p class="Apply__pp--about">個人情報の取り扱いを<br>お読みになりましたら下記にチェックを<br>入れてください。</p></a>
                             <br><input type="checkbox" name="pp">
                         </legend>
                     </fieldset>

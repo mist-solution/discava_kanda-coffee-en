@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ) {
             header("Location: thanks.php");
         } else {
-            header("Location: ../index.html");
+            header("Location: thanks.php");
         }
     }
 }
@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         >>>>>>> 510e176abd4d5c82c6ee0d533914121615881614
         <meta property="og:type" content="article" />
         <meta property="og:title" content="神田珈琲園 神田駅北口店" />
-        <meta property="og:description" content="神田駅から北口徒歩一分の直火式自家焙煎・ネルドリップのカフェ。1957年に東京神田・国鉄中央線ガード下で開業。" />
+        <meta property="og:description" content="神田珈琲園 神田駅北口店　申込書申請確認" />
         <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請確認" />
         <meta property="og:image" content="top_pic/logo.svg" />
 
@@ -159,7 +159,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         誤りがないかご確認ください。<br>
                         特にメールアドレスに関しては、<br>
                         誤りがありますとご返信できません。<br>
-                        必ずご確認いただきますようお願い申し上げます。</p>
+                        必ずご確認いただきますよう<br>
+                        お願い申し上げます。</p>
                 </section>
                 <form action="confirm.php" method="post" name="form" onsubmit="return validate()">
                     <input type="hidden" name="name" value="<?php echo $name; ?>">
@@ -195,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </legend>
                     </fieldset>
                     <input class="Apply__btn--2" type="button" value="内容を修正する" onclick="history.back(-1)">
-                    <button class="Apply__btn" type="submit" name="submit">送信する</button>
+                    <button class="Apply__btn2" type="submit" name="submit">送信する</button>
                 </form>
                 <p class="pagetop">
                     <script>
