@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="top_pic/faviconV2.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="../top_pic/faviconV2.ico" />
 
     <!-- OGP -->
     <meta property="og:url" content="https://www.kanda-coffee-en.com/" />

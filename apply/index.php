@@ -17,7 +17,7 @@
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="top_pic/faviconV2.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="../top_pic/faviconV2.ico" />
 
         <!-- OGP -->
         <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
@@ -26,7 +26,6 @@
     <meta property="og:description" content="神田珈琲園 神田駅北口店　申込書申請用メールフォーム" />
     <meta property="og:site_name" content="神田珈琲園 神田駅北口店 | 申込書申請用メールフォーム" />
     <meta property="og:image" content="top_pic/logo.svg" />
-
     <script>
         $(function() {
             /* 「同意する」チェックイベント */
@@ -73,11 +72,11 @@
                         </legend>
                         <legend>
                             <label>ふりがな</label>
-                            <br><input type="text" name="furigana" placeholder="例）やまだたろう" value=""  required="required">
+                            <br><input type="text" name="furigana" placeholder="例）やまだたろう" value="" pattern="[\u3041-\u3096]*" title="ひらがなで入力してください。" required="required">
                         </legend>
                         <legend>
                             <label>メールアドレス</label>
-                            <br><input type="email" name="email" placeholder="例）guest@example.com" value="" required="required">
+                            <br><input type="email" name="email" placeholder="例）guest@example.com" pattern="[^/ {2,}/]+[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="正しいメールアドレスを入力してください。"value="" required="required">
                         </legend>
                         <legend>
                             <label>住所</label>
@@ -85,7 +84,7 @@
                             <label>ー</label>
                             <input class="input__zipCode2" type="zipCode2" name="zipCode2" placeholder="0000" value="" required="required">
                             <br><input type="address1" name="address1" placeholder="東京都千代田区鍛冶町2-13-12" value="" required="required">
-                            <br><input type="address2" name="address2" placeholder="マンション・ビル名等" value="" required="required">
+                            <br><input type="address2" name="address2" placeholder="マンション・ビル名等" value="">
                         </legend>
                         <legend class="Apply__pp">
                             <a target="_blank" href="https://kanda-coffee-en.shop-pro.jp/?mode=privacy"><label class="Apply__pp--label arrow">個人情報の取り扱いについて</label>
