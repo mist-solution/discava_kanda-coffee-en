@@ -15,7 +15,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../stylesheet/style.css">
     <script src="../js/main.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="top_pic/faviconV2.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="../top_pic/faviconV2.ico" />
 
         <!-- OGP -->
         <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
@@ -68,11 +68,11 @@
                     </legend>
                     <legend>
                         <label>ふりがな</label>
-                        <br><input type="text" name="furigana" placeholder="例）やまだたろう" value=""  required="required">
+                        <br><input type="text" name="furigana" placeholder="例）やまだたろう" value="" pattern="[\u3041-\u3096]*" title="ひらがなで入力してください。" required="required">
                     </legend>
                     <legend>
                         <label>メールアドレス</label>
-                        <br><input type="email" name="email" placeholder="例）guest@example.com" value="" required="required">
+                        <br><input type="email" name="email" placeholder="例）guest@example.com" value="" pattern="[^/ {2,}/]+[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="正しいメールアドレスを入力してください。" required="required">
                     </legend>
                     <legend>
                         <label>お問い合わせ内容</label>
