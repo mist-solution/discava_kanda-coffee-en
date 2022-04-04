@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $zipCode1  = $_POST["zipCode1"];
     $zipCode2  = $_POST["zipCode2"];
     $address1  = $_POST["address1"];
-    $address2  = $_POST["address2"];
     $pp  = $_POST["pp"];
 
     if (isset($_POST["submit"])) {
@@ -41,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 【 住所 】 
                 {$zipCode1}ー{$zipCode2}
                 {$address1}
-                {$address2}
                 ===================================================
 
                 内容を確認のうえ、回答させて頂きます。
@@ -82,8 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 【 住所 】 
                 {$zipCode1}ー{$zipCode2}
                 {$address1}
-                {$address2}
-                
 
                 
             EOM;
@@ -169,7 +165,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="hidden" name="zipCode1" value="<?php echo $zipCode2; ?>">
                     <input type="hidden" name="zipCode2" value="<?php echo $zipCode2; ?>">
                     <input type="hidden" name="address1" value="<?php echo $address1; ?>">
-                    <input type="hidden" name="address2" value="<?php echo $address2; ?>">
                     <input type="hidden" name="pp" value="<?php echo $pp; ?>">
                     <fieldset>
                         <legend>
@@ -192,7 +187,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <br>
                             <p class="Confirm__p"><?php echo $zipCode1; ?>ー<?php echo $zipCode2; ?></p>
                             <p class="Confirm__p"><?php echo $address1; ?></p>
-                            <p class="Confirm__p"><?php echo $address2; ?></p>
                         </legend>
                     </fieldset>
                     <input class="Apply__btn--2" type="button" value="内容を修正する" onclick="history.back(-1)">
