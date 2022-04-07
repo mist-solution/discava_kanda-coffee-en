@@ -338,6 +338,7 @@ li{
   font-size:clamp(20px,100vw/37,25px);
   margin-top: 3.5vh;
   font-weight: bold;    
+  margin:0;
 }
 .HumMenu__list{
   text-align:left;
@@ -345,9 +346,10 @@ li{
   padding-left: 1rem;
 }
 .HumMenu__list--last{
-  font-size: 22px;
+  font-size: 19px;
   text-align:center;
-  margin-top: 4vh;
+  margin-top: 3vh;
+  margin-bottom:3vh;
   border-bottom: dashed 2px #362514;
   width:fit-content;
   margin-left:auto;
@@ -2822,7 +2824,40 @@ textarea{
   max-width:400px;
 }
 /*************   申込書申請ページここまで   *************/
+/*************   404ページここ   *************/
 
+.NotFound{
+  text-align: center;
+  padding-top:10em;
+}
+
+/* 404ページランダム要素 */
+.mamenoki{
+  display:none;
+}
+.Mshow{
+  display:block;
+}
+.mame{
+  margin-top:7%;
+}
+.mamem{
+  width:2em;
+}
+.box5 {
+    width: 330px;
+    padding: 1em 1.5em;
+    margin: 10vh auto;
+    background-color: #fff;
+    border: dotted 6px #362514;
+    color: #000000;
+}
+.box5 p {
+  margin: 0; 
+  padding: 0;
+  font-size:1.1em;
+}
+/*************   404ページここまで   *************/
 a{
   color:inherit;
 }
