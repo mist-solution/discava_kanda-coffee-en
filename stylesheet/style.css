@@ -335,7 +335,7 @@ li{
 }
 .HumMenu{
   padding-left:0;
-  font-size:clamp(20px,100vw/37,25px);
+  font-size:clamp(18px,100vw/40,22px);
   margin-top: 3.5vh;
   font-weight: bold;    
   margin:0;
@@ -356,7 +356,10 @@ li{
   margin-right:auto;
 }
 .HumMenu__list--icon{
-  width: clamp(6vw, 7vw, 8vw);
+  width: 4vw;
+  min-width:32px;
+  -webkit-transform: translate(20%, -13%);
+  transform: translate(20%, -13%);
 }
 .Hum__logo{
   width:100%;
