@@ -335,19 +335,26 @@ li{
 }
 .HumMenu{
   padding-left:0;
-  font-size:clamp(18px,100vw/37,25px);
+  font-size:clamp(20px,100vw/37,25px);
+  margin-top: 3.5vh;
+  font-weight: bold;    
 }
 .HumMenu__list{
-  text-align:center;
+  text-align:left;
   margin-top:1.5vh;
+  padding-left: 1rem;
 }
 .HumMenu__list--last{
+  font-size: 22px;
   text-align:center;
-  margin-top:2vh;
-  border-bottom: dashed 1px #362514;
+  margin-top: 4vh;
+  border-bottom: dashed 2px #362514;
   width:fit-content;
   margin-left:auto;
   margin-right:auto;
+}
+.HumMenu__list--icon{
+  width: clamp(6vw, 7vw, 8vw);
 }
 .Hum__logo{
   width:100%;
