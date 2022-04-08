@@ -81,7 +81,7 @@
                         <legend>
                             <label>住所</label>
                             <br><input class="input__zipCode1" type="zipCode1" name="zipCode1" placeholder="000" value="" required="required">
-                            <label>ー</label>
+                            <label>−</label>
                             <input class="input__zipCode2" type="zipCode2" name="zipCode2" placeholder="0000" value="" required="required">
                             <br><input type="address1" name="address1" placeholder="東京都千代田区鍛冶町2-13-12（マンション・ビル名等）" value="" required="required">
                         </legend>

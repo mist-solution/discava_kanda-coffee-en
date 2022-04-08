@@ -121,15 +121,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <style></style>
     <link rel="stylesheet" href="../stylesheet/style.css">
-    <script src="../js/main.js"></script>
-    <<<<<<< HEAD <!-- OGP -->
+    <script src="../js/main.js"></script><!-- OGP -->
         <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
-        =======
         <link rel="shortcut icon" type="image/x-icon" href="../top_pic/faviconV2.ico" />
 
         <!-- OGP -->
         <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
-        >>>>>>> 510e176abd4d5c82c6ee0d533914121615881614
         <meta property="og:type" content="article" />
         <meta property="og:title" content="神田珈琲園 神田駅北口店" />
         <meta property="og:description" content="神田珈琲園 神田駅北口店　申込書申請確認" />
@@ -162,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="hidden" name="name" value="<?php echo $name; ?>">
                     <input type="hidden" name="furigana" value="<?php echo $furigana; ?>">
                     <input type="hidden" name="email" value="<?php echo $email; ?>">
-                    <input type="hidden" name="zipCode1" value="<?php echo $zipCode2; ?>">
+                    <input type="hidden" name="zipCode1" value="<?php echo $zipCode1; ?>">
                     <input type="hidden" name="zipCode2" value="<?php echo $zipCode2; ?>">
                     <input type="hidden" name="address1" value="<?php echo $address1; ?>">
                     <input type="hidden" name="pp" value="<?php echo $pp; ?>">
@@ -185,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <legend>
                             <label>住所</label>
                             <br>
-                            <p class="Confirm__p"><?php echo $zipCode1; ?>ー<?php echo $zipCode2; ?></p>
+                            <p class="Confirm__p"><?php echo $zipCode1; ?>−<?php echo $zipCode2; ?></p>
                             <p class="Confirm__p"><?php echo $address1; ?></p>
                         </legend>
                     </fieldset>
