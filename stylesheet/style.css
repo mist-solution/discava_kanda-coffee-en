@@ -102,7 +102,7 @@ li{
 /* width420以下で表示 */
 .br__sp {
   display: none;
-}
+} 
 @media (max-width: 420px) {
   .br__sp {
     display: block;
@@ -476,7 +476,7 @@ li{
     color:#fff;
   }
   .Head{
-    height:4em;
+    height:5.2em;
     max-width:100%;
     width:100%;
     position:sticky;
@@ -489,13 +489,14 @@ li{
     margin-left:9px;
   }
   .HeadSP__btn--hm{
-    position:absolute;
-    right:5%;
-    top:23%;
+  position: absolute;
+  right: 14%;
+  top: 32%;
   }
+
   .HeadSP__btn{
     height:100%;
-    width:70px;
+    width:85px;
     position:relative;
     float:right;
     padding-right:20px;
@@ -523,11 +524,11 @@ li{
   }
   .HeadSP__text:first-of-type{
     top:30%;
-    left:90px;
+    left:120px;
   }
   .HeadSP__text:last-of-type{
     top:60%;
-    left:90px;
+    left:120px;
   }
   .HeadSP__text img{
     height:12px;
@@ -1322,6 +1323,26 @@ li{
     margin-left:auto;
     height:100%;
   }
+  .Head {
+    height: 4em;
+  }
+  .HeadSP__text:first-of-type{
+    top:30%;
+    left:90px;
+  }
+  .HeadSP__text:last-of-type{
+    top:60%;
+    left:90px;
+  }
+  .HeadSP__btn--hm{
+    position:absolute;
+    right:5%;
+    top:23%;
+  }
+  .HeadSP__btn{
+    height:100%;
+    width:70px;
+  }
   .Hslider {
     overflow-x: auto;       /* 横幅が画面からはみ出たら横スクロールさせる */
     white-space: nowrap;
@@ -1944,6 +1965,7 @@ textarea{
   left:20%;
   font-size:clamp(14px,100vw/27,21px);
   padding-right:1.5em;
+  line-height:1.7em;
 }
 .About3Ls__dd span{
   border-bottom: 1px solid white;
@@ -2021,11 +2043,11 @@ textarea{
 }
 .MenuList{
   width:90%;
-  margin:5% auto 10% auto;
-  overflow:auto;
+  margin:5% auto 0% auto;
+  overflow:hidden;
 }
 .MenuList__info{
-  font-size:clamp(16px,100vw/30,20px);
+  font-size:clamp(14px,100vw/30,20px);
   color:#808080;
   text-align: right;
   margin-bottom:2em;
@@ -2051,6 +2073,7 @@ textarea{
 }
 .MenuDiv__about p:first-child{
   font-weight:700;
+  margin-top: 0.3em;
 }
 
 .MenuList__wrap{
@@ -2066,7 +2089,10 @@ textarea{
   margin-right:auto;
   border-top:1px solid #362514;
 }
-
+.MenuDiv__about--no{
+  font-size:clamp(18px,100vw/32,20px);
+  padding-top:5%;
+}
 /*PAD以上*/
 @media screen and (min-width:768px) {
   .MenuTop__h2{
@@ -2104,7 +2130,7 @@ textarea{
   .MenuIcon {
     position: absolute;
     right: 5px;
-    top: 0px;
+    top: 33px;
     transform: translatey(-50%);
     width: 38px;
     height: 38px;
@@ -2142,6 +2168,10 @@ textarea{
     white-space: nowrap;
     margin-right: -0.5em;
   }
+  .MenuDiv__about--no{
+    font-size:clamp(18px,100vw/32,20px);
+    padding-top:4%;
+  }
 }
 /*スマホ*/
 @media screen and (max-width:767.8px) {
@@ -2155,10 +2185,10 @@ textarea{
     text-shadow: 1px 2px 3px #000;
   }
   .MenuDiv__about--no p:last-child{
-    font-size: .8em;
+    font-size: .9em;
   }
   .MenuDiv__about p:last-child{
-    font-size:.9em;
+    font-size:1em;
   }
   .MenuTop{
     height:30vh;
@@ -2182,7 +2212,7 @@ textarea{
   .MenuIcon {
     position: absolute;
     right: 5px;
-    top: -6px;
+    top: 27.5px;
     transform: translatey(-50%);
     width: 38px;
     height: 38px;
@@ -2210,12 +2240,15 @@ textarea{
   color:#362514;
   text-align: center;
   width: 100%;
-  margin-top:2%;
 }
-.MenuDiv__about--no{
-  font-size:clamp(18px,100vw/32,20px);
-  padding-top:5%;
+.MenuList__title--about2{
+  font-size:clamp(14px,100vw/35,20px);
+  color:#362514;
+  text-align: center;
+  width: 100%;
+  margin-top:3%;
 }
+
 .MenuDiv__about--no p:first-child{
   font-weight:700;
   margin:0;
@@ -2244,9 +2277,10 @@ textarea{
   max-width:700px;
 }
 .MenuList__title p{
-  margin-bottom:.5em;
   margin-left:.5em;
   margin-top:.5em;
+  padding-bottom:.5em;
+  margin-bottom:0;
 }
 
 .MenuIcon__aco {
@@ -2263,7 +2297,7 @@ textarea{
   transition: all 0.4s;
   background: #000;
   left: 50%;
-  top: 140%;
+  top: 50%;
   width: 100%;
   height: 2px;
   transform: translate(-50%, -50%);
@@ -2433,6 +2467,9 @@ table th {
   .GalleryTop{
     height:40vh;
   }
+  .GG_p{
+    display:none;
+  }
   .GalleryTop__h2{
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
@@ -2478,6 +2515,12 @@ table th {
   .GallerySch__tb{
     height:330px;
     overflow-y: scroll;
+  }
+  .GG_p{
+    color: #fff;
+    margin-top: 1em;
+    margin-bottom: -0.5em;
+    font-size: .8em;
   }
   .thead{
     display:none;
