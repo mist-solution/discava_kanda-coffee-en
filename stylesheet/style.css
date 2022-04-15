@@ -390,6 +390,10 @@ li{
 .FirstV p{
   white-space: nowrap;
 }
+.KandaDeli__del{
+  margin:0 auto;
+  width:fit-content;
+}
 /*************   992以下   ***********/
 
 @media screen and (max-width:991.8px){
@@ -1110,6 +1114,7 @@ li{
     max-width:230px;
     background-color: #362514 ;
     color:#fff;
+    min-width:230px;
   }
   .HeadSP{
     display:none;
@@ -1132,7 +1137,7 @@ li{
   .FirstV p:not(.Catch3){
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
-    font-size: clamp(15px, 100vw/60, 25px);
+    font-size: clamp(15px, 100vw/60, 23px);
   }
   .FirstV span{
     padding:.5em .2em .5em .2em;
@@ -1150,21 +1155,23 @@ li{
     right:19%;
   }
   .Head__time{
-    font-size: 1em;
+    font-size: clamp(13px,100vh/55,16px);
     margin-left: -10px;
     margin-bottom: -5px;
     margin-top: 2em;
+    text-align:left;
   }
   .Head__tel{
     margin:0;
     text-align: center;
+    font-size: clamp(13px,100vh/55,16px);
   }
   .Head__tel a{
     color:#fff;
     font-size:.9em;
   }
   .SideMenu{
-    margin-top:20%;
+    margin-top: 2.5vh;
     text-align:center;
     padding:0;
   }
@@ -1173,7 +1180,7 @@ li{
   }
   .SideMenu__list{
     margin-top:1em;
-    font-size:1.2em;
+    font-size: clamp(16px,100vh/45,18px);
     color:#fff;
   }
   .SideMenu__list a{
@@ -1188,8 +1195,8 @@ li{
     color:#362514;
   }
   .SideMenu__list--last{
-    margin-top:2em;
-    font-size:1.1em;
+    margin-top:4vh;
+    font-size: clamp(16px,100vh/45,18px);
     min-width:170px;
     white-space: nowrap;
   } 
@@ -1202,36 +1209,45 @@ li{
     width:70%;
   }
   .Head__fixed {
-    position: sticky;
-    top: 20px;
+    position: fixed;
+    top: 1vh;
     padding-left:1em;
     padding-right:1em;
+    height:100vh;
+    text-align:center;
+    width:200px;
   }
   
   .Head__title{
-    font-size:1em;
+    font-size: clamp(13px,100vh/55,16px);
     text-align:center;
-    margin-top:15px;
+    margin-top:1vh;
     margin-bottom: 0;
   }
   
   .Head__logo{
-    width:100%;
+    width:22vh;
+    min-width:130px;
+    max-width: 100%;
   }
   
   .HeadIcon{
-    margin-top:2em;
+    margin-top:4vh;
     padding:0;
+    text-align:left;
   }
   .HeadIcon li{
-    width:30px;
-    display:inline-block;
-    margin-left:14px;
+    width: 4vh;
+    display: inline-block;
+    margin-left: 14px;
+    max-width: 30px;
+    min-width: 25px;
   }
   .Order{
     display:flex;
     flex-wrap:wrap;
-    font-size: 16px;
+    font-size: clamp(13px,100vh/55,16px);
+    text-align:left;
   }
   .Order dt,.Order dd{
     margin-top:0.5em;
@@ -1245,9 +1261,10 @@ li{
   }
   .Order__day--last{
     width:100%;
-    font-size:0.75em;
-    text-align: center;
+    font-size:0.8em;
+    text-align: left;
     white-space: nowrap;
+    padding-left: 0.5em;
   }  
   .Menu__eg{
     margin-top:1.5em;
@@ -1577,6 +1594,7 @@ li{
 }
 .KandaDeli__btn:hover{
   background-color:#fff;
+  color:#362514;
 }
 .KandaGallery__btn:hover{
   background-color: #fff;
