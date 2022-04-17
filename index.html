@@ -44,12 +44,14 @@
 </head>
 
 <body id="all">
+    <!--ローディングアニメーション-->
     <div class="LoadMov">
         <div class="LoadMov__img">
             <p class="Lmovp">1957</p>
             <p class="btnS btn-border Skip">SKIP</p>
         </div>
     </div>
+    <!--神田珈琲園の歴史の写真-->
     <div id="fullOverlay">
         <img class="Ovimg" alt="Overlay" src="">
         <p class="Fexp" id="1957">1957年<br>国鉄ガード下にて開業</p>
@@ -58,9 +60,11 @@
         <p class="Fexp" id="2022">2022年<br>改装</p>
         <p class="Fab">※タップで戻る</p>
     </div>
+    <!--ここから本ページ-->
     <div class="wrap">
         <div class="row mx-auto">
             <header id="header" class="col-lg-2 Head">
+                <!--ヘッダー部分読み込み-->
                 <script>
                     $(function () {
                         $("#header").load("include/header.html");
@@ -68,6 +72,7 @@
                 </script>
             </header>
             <main class="col-lg Container">
+                <!--ファーストビュー-->
                 <div class="FirstV">
                     <div class="FirstV__container">
                         <p class="Catch1 scroll-fade"><span>一九五七年から神田の地で愛されてきた</span></p>
@@ -75,6 +80,7 @@
                         <p class="Catch3">Scroll</p>
                     </div>
                 </div>
+                <!--お知らせ部分-->
                 <section class="News">
                     <div class="News__title">
                         <h2 class="News__title--h">お知らせ</h2>
@@ -105,6 +111,7 @@
                         </ul>
                     </div>
                 </section>
+                <!--神田珈琲園のはじまり-->
                 <div class="Hwrap">
                     <section class="History">
                         <div class="HistoryAbout">
@@ -154,9 +161,11 @@
                         </div>
                     </section>
                 </div>
+                <!--看板部分-->
                 <div class="Sign">
                     <img class="Sign__icon" alt="coffee-icon" src="top_pic/coffee-en.svg">
                 </div>
+                <!--おすすめメニュー-->
                 <section class="Menu">
                     <div class="Menu__title">
                         <img alt="hukidashi" src="top_pic/hukidshi.svg">
@@ -192,6 +201,7 @@
                         <p class="MenuEg__p">種類豊富な珈琲はもちろんセットの軽食や、美味しいケーキもございます。</p>
                     </div>
                 </section>
+                <!--通販-->
                 <section class="KandaDeli">
                     <div class="KandaDeli__title">
                         <img alt="KandaDeli" src="top_pic/home-kanda.svg">
@@ -225,6 +235,7 @@
                             </span>Shop</p></a>
                     </div>
                 </section>
+                <!--ギャラリー-->
                 <section class="KandaGallery">
                     <h2 class="KandaGallery__h2">ギャラリー</h2>
                     <img alt="Gallery" class="KandaGallery__img" src="top_pic/Gallery2.png">
@@ -236,6 +247,7 @@
                         <p class="KandaGallery__btn">出店希望の方はこちら</p>
                     </a>
                 </section>
+                <!--店舗情報-->
                 <section class="ShopAbout">
                     <div class="ShopAbout__title">
                         <h2>店舗情報</h2>
@@ -260,17 +272,20 @@
                     </div>
                 </section>
                 <p class="pagetop">
+                    <!--ページ上部へ読み込み-->
                     <script>
                         $(function () {
                             $(".pagetop").load("include/pagetop.html");
                         });
                     </script>
                 </p>
+                <!--通販はこちら-->
                 <a href="https://kanda-coffee-en.shop-pro.jp/" id="kotira"><img src="top_pic/top_kan.png"></a>
             </main>
         </div>
     </div>
     <footer class="footer" id="footer">
+        <!--フッター読み込み-->
         <script>
             $(function () {
                 $("#footer").load("include/footer.html");

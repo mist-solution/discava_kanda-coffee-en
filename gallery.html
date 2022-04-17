@@ -33,6 +33,7 @@
   <div class="wrap">
     <div class="row mx-auto">
       <header id="header" class="col-lg-2 Head">
+        <!--ヘッダー読み込み-->
         <script>
           $(function () {
             $("#header").load("include/header.html");
@@ -40,11 +41,13 @@
         </script>
       </header>
       <main class="col-lg Container">
+        <!--ギャラリーファーストビュー--->
         <section class="Gallery1">
           <div class="GalleryTop">
             <h2 class="GalleryTop__h2"><span>ギャラリー</span></h2>
           </div>
         </section>
+        <!--スケジュール-->
         <section class="GallerySch">
           <div class="GallerySch__h3">
             <h3 class="GalleryTop__h3"><span>スケジュール</span></h3>
@@ -52,6 +55,7 @@
           </div>
           <div class="GallerySch__wrap">
             <div class="GallerySch__tb">
+              <!--スケジュール読み込み-->
               <script>
                 $(function () {
                   $(".GallerySch__tb").load("include/schedule.html");
@@ -61,11 +65,13 @@
             <p class="GG_p">※スクロールで先の予定まで見られます。</p>
           </div>
         </section>
+        <!--ギャラリー説明-->
         <section class="WhatG">
           <h3>ギャラリーとは</h3>
           <img alt="midasiG" src="Gallery_pic/midasiG.png" class="MidasiG">
           <p>当店２階には、絵画・写真・イラスト等を展示できる展示スペース（ギャラリー）がございます。<br>当店展示スペースは、１４日を１単位とする「年間２６枠制」となっております。（年末年始は短縮日程あり）</p>
         </section>
+        <!--利用案内-->
         <section class="InfoG">
           <h3>ご利用について</h3>
           <img alt="midasiG" src="Gallery_pic/midasiG.png" class="MidasiG">
@@ -104,12 +110,14 @@
             </div>
           </div>
         </section>
+        <!--見取り図-->
         <section class="MapG">
           <h3>見取り図</h3>
           <img alt="midasiG" src="Gallery_pic/midasiG.png" class="MidasiG"><br>
           <img alt="Sketch" src="Gallery_pic/gall.png" class="MapG__Sketch">
         </section>
         <p class="pagetop">
+          <!--ページ上部へ読み込み-->
           <script>
             $(function () {
               $(".pagetop").load("include/pagetop.html");
@@ -120,6 +128,7 @@
     </div>
   </div>
   <footer class="footer" id="footer">
+    <!--フッター読み込み-->
     <script>
       $(function () {
         $("#footer").load("include/footer.html");

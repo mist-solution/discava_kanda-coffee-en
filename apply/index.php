@@ -50,6 +50,7 @@
     <div class="wrap">
         <div class="row mx-auto">
             <header id="header" class="col-lg-2 Head">
+                <!--ヘッダー読み込み-->
                 <script>
                     $(function() {
                         $("#header").load("../include/header2.html");
