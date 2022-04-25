@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mb_language("ja");
             mb_internal_encoding("UTF-8");
             $fromName = "神田珈琲園";
-            $fromEmail = "integration-test@mistnet.co.jp";
+            $fromEmail = "cafemaster@kanda-coffee-en.com";
             $header = "From: " . mb_encode_mimeheader($fromName) . "<{$fromEmail}>";
             $subjectToShop = "{$name} 様からの問い合わせ内容";
             $subject = $subjectToShop;

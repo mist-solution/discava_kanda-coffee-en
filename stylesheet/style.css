@@ -269,7 +269,7 @@ li{
   }
 /* アニメーション前のメニューの状態 */
 .Hum{
-  width:98%;
+  width:100%;
   height:100vh;
   display:none;
   text-align: center;
@@ -860,6 +860,7 @@ li{
   .NList li{
     margin-bottom:8px;
     position:relative;
+    margin-top:1em;
   }
   .NList img{
     height:2.2em;
@@ -1015,14 +1016,14 @@ li{
   }
   .Recom__about--1{
     right:-4%;
-    top:-3em;
+    top:-3.5em;
   }
   .Recom__about--2{
     right:-4%;
     top:-2em;
   }
   .Recom__about--big{
-    font-size: clamp(20px, 100vw/40, 45px);
+    font-size: 1.7em;
   }
   .Recom__about--icon{
     margin-right:.2em;
@@ -1045,7 +1046,7 @@ li{
     width:fit-content;
     margin-left:auto;
     margin-right:auto;
-    margin-top:2em;
+    margin-top:5em;
   }
   .MenuEg__list--last{
     background-color:#362514;
@@ -1482,6 +1483,10 @@ li{
     position:relative;
     height:100%;
     width:100%;
+}
+.NList > a:not(:last-of-type){
+  border-bottom:1px solid rgba(54,37,20,.2);
+  display: block;
 }
 .KandaDeli{
   margin-top: 10em;
@@ -2346,6 +2351,7 @@ textarea{
   border-radius: 10px;
   padding-bottom: 5%;
   text-align: center;
+  padding-top:2%;
 }
 .GallerySch__h3{
   padding-top: 3%;
@@ -2660,12 +2666,12 @@ table th {
   margin-left:.5em;
 }
 .Newses__title img{
-  width: 50%;
+  width: 70%;
   position: absolute;
   transform: translateX(-35%);
   -webkit-transform: translateX(-35%);
   -ms-transform: translateX(-35%);
-  top: -180%;
+  top: -90%;
   min-width: 220px;
 }
 .Newses__title {
@@ -2692,7 +2698,7 @@ table th {
 }
 
 .NewsBox__title h3{
-  font-size:1.2em;
+  font-size:1.1em;
 }
 .NewsBox__title p{
   text-align: right;
@@ -2716,7 +2722,7 @@ table th {
 }
 .NewsList{
   background-color:white;
-  height:300px;
+  height:440px;
   overflow-y: scroll;
 }
 .NewsList__box{
@@ -2740,8 +2746,11 @@ table th {
     width:60%;
   }
   .NewsAll{
-    margin-top: 12%;
+    margin-top: 10%;
     width:30%;
+  }
+  .Newses__title img{
+    top: -120%;
   }
 }
 

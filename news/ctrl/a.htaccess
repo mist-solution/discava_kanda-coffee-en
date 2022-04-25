@@ -1,0 +1,16 @@
+<Files ~ "^\.ht">
+deny from all
+</Files>
+AuthType BASIC
+AuthUserFile /home/k-crk/naisho/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Enter Password"
+<limit GET POST>
+require valid-user
+</limit>
+
+# AccessControl IP/HOST
+order deny,allow
+deny from all
+allow from kngw.nt.ngn.ppp.infoweb.ne.jp
+allow from kanagawa.ocn.ne.jp

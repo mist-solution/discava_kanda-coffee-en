@@ -42,6 +42,10 @@
                     return false;
                 }
             });
+
+            $(window).on('load', function() {
+                $("input[name='pp']").removeAttr("checked").prop("checked", false).change(); 
+            });
         });
     </script>
 </head>

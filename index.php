@@ -32,7 +32,7 @@
             webStorage();
         });
     </script>
-    <link rel=”icon” href="top_pic/faviconV2.ico">
+    <link rel="icon" href="top_pic/faviconV2.ico">
     <link rel="apple-touch-icon" href="top_pic/faviconV2.png">
     <!-- OGP -->
     <meta property="og:url" content="https://www.kanda-coffee-en.com/" />
@@ -88,27 +88,61 @@
                     </div>
                     <div class="News__list scroll-fade">
                         <ul class="NList">
-                            <a href="news/index.html">
-                                <li><span class="NList__date">2021-11-29</span><br>
-                                    <p class="NList__title">神田珈琲園ネット通販【年末年始期間・配送のお知らせ】</p>
-                                </li>
-                            </a>
-                            <a href="news/index.html">
-                                <li class="NList_border"><span class="NList__date">2021-11-29</span><br>
-                                    <p class="NList__title">【鉄道時間】写真展 2/4まで</p>
-                                </li>
-                            </a>
-                            <a href="news/index.html">
-                                <li class="NList_border"><span class="NList__date">2021-11-29</span><br>
-                                    <p class="NList__title">【鉄道時間】写真展 2/4まで</p>
-                                </li>
-                            </a>
-                            <a href="news/index.html">
-                                <li class="NList_border"><span class="NList__date">2021-11-29</span><br>
-                                    <p class="NList__title">【鉄道時間】写真展 2/4まで</p>
-                                </li>
-                            </a>
-                        </ul>
+<!--iijima-->
+<?php
+# === ↓設定 ===
+$fntail = "cf";			# ログファイル名（末尾2文字)
+$logdir = "./news/log/";	# ログ保存ディレクトリ
+$ImgDir = "./news/img/";	# ログ保存ディレクトリ
+$pdfdir = "./news/pdf/";	# ログ保存ディレクトリ
+$numfile = "./news/log/num.dat";# 採番ファイル
+$nonews = "準備中";
+$pagenews = 4;		# 記事表示件数
+# === ↑設定 ===
+
+#=== 日付設定 ===
+$today = sprintf("%04d%02d%02d",date("Y"),date("m"),date("d"));	#yyyy/mm/dd
+(int)$today_ymn = sprintf("%04d%02d",date("Y"),date("m"));	#yyyymm
+$start = sprintf("%04d/%02d/%02d",date("Y"),date("m"),date("d"));#yyyy/mm/dd
+(int)$today_ymdn=date("Y")*10000+date("m")*100+date("d");	#yyyymmdd
+
+$i=0;
+$count=0;
+
+
+# === ログ一覧を取得 ===
+$i=0;
+$count=0;
+$bfilename = glob($logdir."??????".$fntail.".dat");
+rsort ($bfilename);
+# === 表示 ===
+while ($count <= $pagenews){
+# === ログファイル名を取得 ===
+	$logfile = fopen($bfilename[$i],"r");
+	while (!feof($logfile)){
+		$log = fgets($logfile);
+		if ($log==""){break;}			# === ログ終端なら中止
+		$logary = explode("<>",$log);
+	if ($logary[0]=='No'){continue;}	# === ヘッダ
+
+# === 記事日付とタイトル表示 ===
+		$logary[2] = mb_ereg_replace("http?s?:[\/\.\=\&\?a-zA-Z0-9_~\-#]*","<a href='\\0'>\\0</a>",$logary[2]);
+		print "<a href='news/index.php?id=$logary[3]'><li><span class='NList__date'>$logary[4]</span><br>\n";
+		print "<p class='NList__title'>$logary[1]</p>\n";
+		print "</li></a>\n";
+
+		$count++;
+		if ($count >= $pagenews){break;}
+	}
+	fclose($logfile);
+	$i++;
+	if ($count >= $pagenews){break;}
+	if (!file_exists($bfilename[$i])){
+		break;
+	}
+}
+?>
+                       </ul>
                     </div>
                 </section>
                 <!--神田珈琲園のはじまり-->

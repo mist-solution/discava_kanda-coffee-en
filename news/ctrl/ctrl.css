@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+.title{
+	font-weight: bold;
+	font-size:1.2em;
+	text-align:center;
+	background:#da6;
+	border-top:solid #603 1px;
+	border-bottom:solid #603 1px;
+}
+.title_l{
+	font-size:1.2em;
+	text-indent: 2em;
+	text-align:left;
+	background:#fec;
+	border-top:solid #060 1px;
+	border-bottom:solid #060 1px;
+}
+.title2{
+	text-align:center;
+	font-size:1.2em;
+	background:#ffe;
+	border-top:solid #060 1px;
+	border-bottom:solid #060 1px;
+}
+.title2_l{
+	text-align:left;
+	font-size:1.2em;
+	text-indent: 2em;
+	background:#ffe;
+	border-top:solid #060 1px;
+	border-bottom:solid #060 1px;
+}
+.title3{
+	text-align:center;
+	font-size:1.2em;
+	text-indent:2em;
+	background:#eee;
+	border-top:solid #060 1px;
+	border-bottom:solid #060 1px;
+}
+.title4{
+	text-align:left;
+	background:#cfc;
+	border-top:solid #060 1px;
+	border-bottom:solid #060 1px;
+}
+.white{
+	background:#fff;
+}
+.gray{
+	background:#ccc;
+	
+}
+a:link {
+	color:#00c;
+	text-decolation:underline;
+}
+a:visited {
+	color:#00c;
+	text-decolation:underline;
+}
+a:hover {
+	color:#00c;
+	text-decolation:underline;
+}
